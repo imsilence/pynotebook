@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block container %}
+<div class="row">
+	{% for object in object_list %}
+	<div class="col-xs-6 col-md-3">
+		<a class="thumbnail" href="{% url 'goods:detail' object.pk %}">
+			<img alt="" style="width:250px; height:300px;" src="{{ object.img.url }}" class="img-responsive">
+		</a>
+		<div class="panel-title text-center">
+			<a href="{% url 'goods:detail' object.pk %}">{{ object.name }}</a>
+		</div>
+		<div class="text-center">
+			<h1 class="badge">¥ {{ object.price }}</h1>
+		</div>
+	</div>
+	{% endfor %}
+</div>
+{% endblock %}

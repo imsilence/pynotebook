@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block container %}
+<div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+        <form class="form-horizontal" action="{% url 'account:delete_user_address' object.pk %}" method="POST" novalidate="novalidate">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <td>{{ object.name }}</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>    <button type="submit" class="btn btn-default">删除</button></td>
+                    <td></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+{% endblock %}

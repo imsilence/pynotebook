@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>jq学习</title>
+        <style>
+        .test {
+            position: absolute;
+            right:0;
+        }
+        </style>
+    </head>
+    <body>
+        <input type="button" class="btn-show" value="显示"/>
+        <input type="button" class="btn-hide" value="隐藏"/>
+        <input type="button" class="btn-toggle" value="显示/隐藏"/>
+        <div class="div-show-or-hide">
+            sdddddddddddddddddddddddddddddddddddddddd
+        </div>
+        <div id="mydiv"></div>
+        <div class="myclassdiv"></div>
+        <div class="myclassdiv"></div>
+
+        <script type="text/javascript" src="jquery-1.11.1.js"></script>
+        <script type="text/javascript">
+        console.log(jQuery("#mydiv").length);
+        console.log($("#mydiv").length);
+        console.log($(".myclassdiv").length);
+        console.log($("div").length);
+
+        var innerDiv = $("<div></div>");
+        console.log(innerDiv.html());
+        innerDiv.html("my name is kk");
+        innerDiv.css({"color" : "red"})
+        console.log(innerDiv.attr("id"));
+        innerDiv.attr("id", 'myinnerdiv')
+        console.log(innerDiv.attr("id"));
+        console.log(innerDiv.html());
+        $("#mydiv").append(innerDiv);
+
+        innerDiv.on("click", function() {
+            console.log(new Date());
+        });
+
+        $("#mydiv").addClass("test");
+
+		$(".myclassdiv").append($("<input/>"))
+        $("selector").each(function() {
+            console.log($(this));
+            console.log('a');
+        })
+
+        setTimeout(function() {
+            $("#mydiv").removeClass("test");
+        }, 10 * 1000);
+
+        setTimeout(function() {
+            innerDiv.remove();
+        }, 20 * 1000);
+                 //text()
+                 //innerHTML, innerText
+
+        $(".btn-show").on("click", function() {
+            $(".div-show-or-hide").show();
+        });
+        $(".btn-hide").on("click", function() {
+            $(".div-show-or-hide").hide();
+        });
+        $(".btn-toggle").on("click", function() {
+            $(".div-show-or-hide").toggle(3000);
+        });
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %} 用户列表 {% endblock %}
+{% block nav_user %}class="active"{% endblock %}
+{% block content %}
+<a href="/user/create_user/">添加</a>
+<table id="table-user" class="table table-striped table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>名字</th>
+            <th>年龄</th>
+            <th>电话号码</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.username }}</td>
+                <td>{{ user.age }}</td>
+                <td>{{ user.tel }}</td>
+                <td>
+                    <a href="/user/view_user/?id={{ user.id }}">编辑</a>
+                    <a href="/user/view_password/?id={{ user.id }}">修改密码</a>
+                    <a href="/user/delete_user/?id={{ user.id }}">删除</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+{% block scripts %}
+<script type="text/javascript">
+jQuery(document).ready(function() {
+    jQuery('#table-user').DataTable({
+        language: {
+            "sProcessing": "处理中...",
+            "sLengthMenu": "显示 _MENU_ 项结果",
+            "sZeroRecords": "没有匹配结果",
+            "sInfo": "显示第 _START_ 至 _END_ 项结果，共 _TOTAL_ 项",
+            "sInfoEmpty": "显示第 0 至 0 项结果，共 0 项",
+            "sInfoFiltered": "(由 _MAX_ 项结果过滤)",
+            "sInfoPostFix": "",
+            "sSearch": "搜索:",
+            "sUrl": "",
+            "sEmptyTable": "表中数据为空",
+            "sLoadingRecords": "载入中...",
+            "sInfoThousands": ",",
+            "oPaginate": {
+                "sFirst": "首页",
+                "sPrevious": "上页",
+                "sNext": "下页",
+                "sLast": "末页"
+            },
+            "oAria": {
+                "sSortAscending": ": 以升序排列此列",
+                "sSortDescending": ": 以降序排列此列"
+            }
+        }
+    });
+});
+</script>
+{% endblock %}

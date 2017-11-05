@@ -1,0 +1,112 @@
+{% extends 'layout.html' %}
+
+{% load staticfiles %}
+
+{% block title %}购物车{% endblock %}
+
+{% block container %}
+<form action="{% url 'goods:create_order' %}" method="post">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">购物车</div>
+                <table class="table">
+                     <thead>
+                        <tr>
+                            <th></th>
+                            <th colspan="2">商品</th>
+                            <th>单价</th>
+                            <th>数量</th>
+                            <th>小计</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for shopping_car in shopping_cars %}
+                            <tr id="shopping_car_{{shopping_car.pk}}">
+                                <td>
+                                    <input type="checkbox" name="shopping_car" value="{{ shopping_car.pk }}" checked="checked" />
+                                </td>
+                                <td>
+                                    <a href="{% url 'goods:goods_detail' shopping_car.goods.pk %}" ><img src="{{ shopping_car.goods.img.url }}" style="width:70px; height:70px;"/></a>
+                                </td>
+                                <td>
+                                    <a href="{% url 'goods:goods_detail' shopping_car.goods.pk %}" >{{ shopping_car.goods.name }}</a>
+                                </td>
+                                <td>
+                                    {{ shopping_car.goods.price }}
+                                </td>
+                                <td>
+                                    {{ shopping_car.num }}
+                                </td>
+                                <td>
+                                    {{ shopping_car.total_price }}
+                                </td>
+                                <td>
+                                    <a class="btn-delete" data-id="{{ shopping_car.pk }}">删除</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+           <div class="panel panel-default">
+                <div class="panel-heading">收货人</div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>收货人</th>
+                            <th>联系方式</th>
+                            <th>固定联系方式</th>
+                            <th>地址</th>
+                            <th>邮箱</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for user_address in user_addresses %}
+                            <tr >
+                                <td>
+                                    <input type="radio" name="user_address" value="{{ user_address.pk }}" {% if forloop.first %}checked="checked"{% endif %}/>
+                                </td>
+                                <td>{{ user_address.name }}</td>
+                                <td>{{ user_address.telephone }}</td>
+                                <td>{{ user_address.fixedphone }}</td>
+                                <td>{{ user_address.addr }}</td>
+                                <td>{{ user_address.email }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">
+            <input type="submit" class="btn btn-primary" value="提交订单"/>
+        </div>
+    </div>
+</form>
+{% endblock %}
+{% block js %}
+    jQuery(document).ready(function() {
+        jQuery('a.btn-delete').on('click', function() {
+            var id = jQuery(this).data('id');
+            var params = {
+                'shopping_car' : id,
+                'csrfmiddlewaretoken' : '{{ csrf_token }}'
+            };
+            jQuery.post("{% url 'goods:remove_shopping_car' %}", params, function(result) {
+                if(result['status'] == 200) {
+                    refresh_shopping_car();
+                    jQuery('tr#shopping_car_' + id).remove();
+                }
+            }, 'json')
+        });
+    });
+{% endblock %}

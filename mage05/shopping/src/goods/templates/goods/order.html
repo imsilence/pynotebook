@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+
+{% block container %}
+<div class="row">
+    <div class="col-sm-12">
+        {% for object in object_list %}
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <label>下单时间:</label>{{ object.create_time }} 
+                    </div>
+                    <div class="col-sm-2">
+                        <label>收货人:</label>
+                        <a role="button" data-toggle="popover" title="{{ object.user_address.name }}" data-trigger="hover" data-html="true" data-placement="bottom"  data-content="联系方式:{{ object.user_address.telephone }}<br/>收货地址:{{ object.user_address.site }}">
+                            {{ object.user_address.name }}
+                        </a>
+                    </div>
+                    <div class="col-sm-2">
+                        <label>总价格:</label>{{ object.price }} 
+                    </div>
+                    <div class="col-sm-2">
+                        <label>状态:</label>{{ object.status_text }} 
+                    </div>
+                    <div class="col-sm-2">
+                        {% if object.status == 1 %}
+                            <button class="btn btn-info btn-sm order-cancel" data-id="{{ object.id }}">取消订单</button>
+                        {% elif object.status == 2 %}
+                             <button class="btn btn-info btn-sm order-makesure" data-id="{{ object.id }}">确认收货</button>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th colspan="2" class="col-md-6">商品</th>
+                        <th class="col-md-2">单价</th>
+                        <th class="col-md-2">数量</th>
+                        <th class="col-md-2">总价格</th>
+                    </tr>
+                </thead>
+                {% for goodsbuied in object.goodsbuied_set.all %}
+                    <tr>
+                        <td>
+                            <img src="{{ goodsbuied.goods.img.url }}" style="height:70px; width:70px" />
+                        </td>
+                        <td>{{ goodsbuied.goods.name }}</td>
+                        <td>{{ goodsbuied.price }}</td>
+                        <td>{{ goodsbuied.num }}</td>
+                         <td>{{ goodsbuied.total_price }}</td>
+                        <td></td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-8 col-xs-offset-4">
+        <nav>
+          <ul class="pager">
+            <li>一共有{{ paginator.count }}条订单信息, 共{{ paginator.num_pages }}页</li>
+            <li {% if not page_obj.has_previous %} class="disabled" {% endif %}>
+                <a href="{% url 'goods:order_list' %}?page=1">第一页</a>
+            </li>
+            <li {% if not page_obj.has_previous %} class="disabled" {% endif %}>
+                <a href="{% url 'goods:order_list' %}?page={% if page_obj.has_previous %}{{ page_obj.previous_page_number }}{% endif %}">前一页</a>
+            </li>
+            <li>当前第 {{ page_obj.number }} 页</li>
+            <li {% if not page_obj.has_next %} class="disabled" {% endif %}>
+                <a href="{% url 'goods:order_list' %}?page={% if page_obj.has_next %}{{ page_obj.next_page_number }}{% endif %}">后一页</a>
+            </li> 
+            <li {% if not page_obj.has_next %} class="disabled" {% endif %}>
+                <a href="{% url 'goods:order_list' %}page={{ paginator.num_pages }}">最后一页</a>
+            </li>
+          </ul>
+        </nav>  
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+jQuery(document).ready(function() {
+    jQuery('[data-toggle="popover"]').popover()
+
+    jQuery('button.order-cancel').on('click', function() {
+        if(confirm("确认取消订单?")) {
+            operate('cancel', jQuery(this).data('id'));
+        }
+    });
+
+
+    jQuery('button.order-makesure').on('click', function() {
+        if(confirm("确认已收货?")) {
+            operate('makesure', jQuery(this).data('id'));
+        }
+    });
+    
+
+    function operate(op, order_id) {
+        var params = {
+            'csrfmiddlewaretoken' : '{{ csrf_token }}',
+            'op' : op,
+            'order_id' : order_id
+        };
+        jQuery.post("{% url 'goods:order_operate' %}", params, function() {
+            window.location.reload();
+        }, 'json');
+    }
+});
+{% endblock %}

@@ -1,0 +1,279 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>{% block title %}KK的商城{% endblock %}</title>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}"/>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/sticky-footer.css' %}"/>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/navbar.css' %}"/>
+		<link rel="stylesheet" type="text/css" href="{% static 'sweetalert/dist/sweetalert.css' %}"/>
+		{% block links %}{% endblock %}
+		<style type="text/css">
+			{% block style %}{% endblock %}
+		</style>
+	</head>
+<body>
+	<div id="wrap">
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="/">KK的商城</a>
+				</div>
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="#">所有商品</a></li>
+						<li><a href="#">Engagement Rings</a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Wedding<b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Action</a></li>
+								<li><a href="#">Another action</a></li>
+								<li><a href="#">Something else here</a></li>
+								<li class="divider"></li>
+								<li><a href="#">Separated link</a></li>
+								<li class="divider"></li>
+								<li><a href="#">One more separated link</a></li>
+							</ul>
+						</li>
+					</ul>
+					<form class="navbar-form navbar-left" role="search">
+						<div class="form-group">
+						<input type="text" class="form-control" placeholder="搜索">
+						</div>
+						<button type="submit" class="btn btn-default">搜索</button>
+					</form>
+					{% if not request.user.is_authenticated or request.user.is_staff %}
+					<ul class="nav navbar-nav navbar-right nav-nologin">
+						<li><a data-toggle="modal" data-target="#dialog_login" data-backdrop="static">登录</a></li>
+						<li><a data-toggle="modal" data-target="#dialog_register" data-backdrop="static">注册</a></li>
+					</ul>
+					{% else %}
+					<ul class="nav navbar-nav navbar-right nav-login">
+						<li><a href="{% url 'goods:shopping_car' %}"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> <span id="shopping_car_cnt">0</span> </a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span>{{ request.user.userext.nickname }}</span> <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								{% if request.user.userext.avatar %}
+								<li>
+									<div class="col-md-12">
+										<a href="{% url 'account:user_avatar' %}"><img style="width:80px;height:80px;" class="img-thumbnail" src="/media/{{ request.user.userext.avatar }}"/></a>
+									</div>
+								</li>
+								{% endif %}
+								<li><a href="{% url 'goods:order_list' %}">个人订单</a></li>
+								<li><a href="{% url 'account:user_ext' %}">个人信息</a></li>
+								<li><a href="{% url 'account:user_addresses' %}">收获地址</a></li>
+								<li><a data-toggle="modal" data-target="#dialog_password_modify" data-backdrop="static">修改密码</a></li>
+								<li role="separator" class="divider"></li>
+								<li><a href="{% url 'account:logout' %}">退出登录</a></li>
+							</ul>
+				        </li>
+					</ul>
+					{% endif %}
+				</div>
+			</div>
+		</nav>
+		<div class="container">
+			{% if messages %}
+				{% for message in messages %}
+					{% if message.tags == 'success' %}
+						<div class="alert alert-success alert-dismissible" role="alert">
+					{% else %}
+						<div class="alert alert-danger alert-dismissible" role="alert">
+					{% endif %}
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						{{ message }}
+					</div>
+				{% endfor %}
+			{% endif %}
+			{% block container %}{% endblock %}
+		</div>
+	</div>
+
+    <div id="footer">
+		<div class="container">
+			<p class="text-muted credit" align="center">©Copyright 2013 Bootply | All rights reserved. </p>
+		</div>
+	</div>
+
+	<div class="modal" id="dialog_login">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4>用户登录</h4>
+				</div>
+				<div class="modal-body">
+					<form class="form-horizontal" role="form" method="post" id="form_login">
+						{% csrf_token %}
+						<div class="form-group">
+							<label for="username" class="col-xs-4 control-label">用户名</label>
+							<div class="col-xs-6">
+								<input type="text" class="form-control" name="username" id="username" placeholder="用户名" value="">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="password" class="col-xs-4 control-label">密码</label>
+							<div class="col-xs-6">
+								<input type="password" class="form-control" name="password" id="password" placeholder="密码" value="">
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-link" id="btn_password_reset">忘记密码</button>
+					<button type="button" class="btn btn-primary" id="btn_login">登录</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal" id="dialog_register">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4>用户注册</h4>
+				</div>
+				<div class="modal-body">
+					<form class="form-horizontal" role="form" method="post" id="form_register">
+						{% csrf_token %}
+						<div class="form-group">
+							<label for="username" class="col-xs-4 control-label">用户名</label>
+							<div class="col-xs-6">
+								<input type="text" class="form-control" name="username" id="username" placeholder="用户名" value="">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="email" class="col-xs-4 control-label">邮箱</label>
+							<div class="col-xs-6">
+								<input type="text" class="form-control" name="email" id="email" placeholder="邮箱" value="">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="password" class="col-xs-4 control-label">密码</label>
+							<div class="col-xs-6">
+								<input type="password" class="form-control" name="password" id="password" placeholder="密码" value="">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="password2" class="col-xs-4 control-label">确认密码</label>
+							<div class="col-xs-6">
+								<input type="password" class="form-control" name="password2" id="password2" placeholder="确认密码" value="">
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					<button type="button" class="btn btn-primary" id="btn_register">注册</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal" id="dialog_password_modify">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4>密码修改</h4>
+				</div>
+				<div class="modal-body">
+					<form class="form-horizontal" role="form" method="post" id="form_password_modify">
+						{% csrf_token %}
+						<div class="form-group">
+							<label for="old_password" class="col-xs-4 control-label">密码</label>
+							<div class="col-xs-6">
+								<input type="password" class="form-control" name="old_password" id="old_password" placeholder="密码" value="">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="password" class="col-xs-4 control-label">新密码</label>
+							<div class="col-xs-6">
+								<input type="password" class="form-control" name="password" id="password" placeholder="新密码" value="">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="password2" class="col-xs-4 control-label">确认新密码</label>
+							<div class="col-xs-6">
+								<input type="password" class="form-control" name="password2" id="password2" placeholder="确认新密码" value="">
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					<button type="button" class="btn btn-primary" id="btn_password_modify">修改</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{% block dialogs %}{% endblock %}
+
+	<script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+	<script type="text/javascript" src="{% static 'sweetalert/dist/sweetalert.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/utils.js' %}"></script>
+	{% block scripts %}{% endblock %}
+	<script type="text/javascript">
+		{% block js %}{% endblock %}
+		function refresh_shopping_car() {
+			if(jQuery('#shopping_car_cnt').length) {	
+				ajax("{% url 'goods:shopping_car_num' %}", {}, function(data) {
+					jQuery('#shopping_car_cnt').text(data['result']);
+				}, 'GET');
+			}
+		}
+		jQuery(document).ready(function() {
+			refresh_shopping_car();
+			jQuery('#btn_register').on('click', function() {
+				var params = jQuery('#form_register').serializeArray();
+				ajax("{% url 'account:register' %}", params, function(data) {
+					jQuery('#dialog_register').modal('hide');
+					swal({
+						title: "注册成功",
+						text: "请查收邮箱进行用户激活",
+						type: "success",
+						confirmButtonText: "确定"
+					});
+				});
+			});
+
+			jQuery('#btn_login').on('click', function() {
+				var params = jQuery('#form_login').serializeArray();
+				ajax("{% url 'account:login' %}", params, function(data) {
+					jQuery('#dialog_login').modal('hide');
+					window.location.replace(window.location.href);
+				});
+			});
+
+			jQuery('#btn_password_reset').on('click', function() {
+				window.location.replace("{% url 'account:password_reset' %}");
+			});
+
+			jQuery('#btn_password_modify').on('click', function() {
+				var params = jQuery('#form_password_modify').serializeArray();
+				ajax("{% url 'account:password_modify' %}", params, function(data) {
+					jQuery('#dialog_password_modify').modal('hide');
+					swal({
+						title: "修改密码成功",
+						text: "",
+						type: "success",
+						confirmButtonText: "确定"
+					});
+				});
+			});
+		});
+	</script>
+</body>
+</html>

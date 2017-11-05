@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% load static %}
+
+{% block container %}
+<form action="{% url 'account:delete_user_address' object.pk %}" method="POST" novalidate="novalidate">
+    {% csrf_token %}
+    确认要删除收货人信息吗? <br/>
+    收货人: {{ object.name }} <br/>
+    联系方式: {{ object.telephone }} <br/>
+    收获地址: {{ object.addr }} <br/>
+    <input type="submit" value="删除" />
+</form>
+{% endblock %}

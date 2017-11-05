@@ -1,0 +1,118 @@
+<map version="1.0.1">
+<!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
+<node CREATED="1502505529199" ID="ID_203730541" MODIFIED="1502505627858" TEXT="&#x7b2c;&#x5341;&#x516b;&#x8282;&#x8bfe;&#x590d;&#x4e60;">
+<node CREATED="1502505646410" ID="ID_1311763019" MODIFIED="1502505650251" POSITION="right" TEXT="FormView">
+<node CREATED="1502505716629" ID="ID_885519672" MODIFIED="1502505724394" TEXT="View&#x5bf9;&#x6bd4;"/>
+<node CREATED="1502505730341" ID="ID_452601046" MODIFIED="1502505762255" TEXT="form &#x5b9e;&#x4f8b;&#x7684;&#x5c01;&#x88c5;">
+<node CREATED="1502505763758" ID="ID_1812490022" MODIFIED="1502505775547" TEXT="form&#x5b9e;&#x4f8b;">
+<node CREATED="1502505946519" ID="ID_1552839647" MODIFIED="1502505948085" TEXT="data"/>
+<node CREATED="1502505948345" ID="ID_755228011" MODIFIED="1502505979676" TEXT="initial"/>
+</node>
+<node CREATED="1502505775895" ID="ID_947268807" MODIFIED="1502505783596" TEXT="form.valid">
+<node CREATED="1502505785201" ID="ID_1813708575" MODIFIED="1502505792859" TEXT="form_valid"/>
+<node CREATED="1502505793156" ID="ID_402377249" MODIFIED="1502505796764" TEXT="form_invalid"/>
+</node>
+</node>
+<node CREATED="1502505804864" ID="ID_490682507" MODIFIED="1502505814707" TEXT="&#x4f7f;&#x7528;">
+<node CREATED="1502505831517" ID="ID_1374732056" MODIFIED="1502505833341" TEXT="&#x5c5e;&#x6027;">
+<node CREATED="1502505837094" ID="ID_353724833" MODIFIED="1502505843674" TEXT="form_class">
+<node CREATED="1502505904654" ID="ID_1910449343" MODIFIED="1502505912057" TEXT="form&#x7c7b;"/>
+</node>
+<node CREATED="1502505899371" ID="ID_709577697" MODIFIED="1502505903139" TEXT="template_name">
+<node CREATED="1502505913769" ID="ID_1707597010" MODIFIED="1502505923595" TEXT="get&#x8bf7;&#x6c42;&#x5c55;&#x793a;&#x7684;&#x9875;&#x9762;"/>
+</node>
+</node>
+<node CREATED="1502505833589" ID="ID_819313468" MODIFIED="1502505835043" TEXT="&#x65b9;&#x6cd5;">
+<node CREATED="1502505931200" ID="ID_1940753473" MODIFIED="1502505934657" TEXT="form_valid"/>
+<node CREATED="1502505934930" ID="ID_172130769" MODIFIED="1502505938467" TEXT="form_invaid"/>
+<node CREATED="1502506130083" ID="ID_1407770584" MODIFIED="1502506132771" TEXT="get_initial"/>
+<node CREATED="1502506211466" ID="ID_784493598" MODIFIED="1502506215189" TEXT="get_form_kwargs"/>
+<node CREATED="1502506350753" ID="ID_518366525" MODIFIED="1502506355185" TEXT="render_to_response"/>
+<node CREATED="1502506355472" ID="ID_1836899222" MODIFIED="1502506358899" TEXT="get_context_data"/>
+</node>
+</node>
+</node>
+<node CREATED="1502505669175" ID="ID_1924675278" MODIFIED="1502505695894" POSITION="right" TEXT="ModelForm">
+<node CREATED="1502506413246" ID="ID_515863675" MODIFIED="1502506418528" TEXT="Form&#x5bf9;&#x6bd4;"/>
+<node CREATED="1502506423072" ID="ID_1277791205" MODIFIED="1502506424752" TEXT="model">
+<node CREATED="1502506443787" ID="ID_1758992297" MODIFIED="1502506452521" TEXT="&#x5b9a;&#x4e49;&#x4e86;&#x4e00;&#x5806;&#x5c5e;&#x6027;"/>
+</node>
+<node CREATED="1502506554251" ID="ID_1999081972" MODIFIED="1502506557664" TEXT="&#x4f7f;&#x7528;&#x65b9;&#x6cd5;">
+<node CREATED="1502506559335" ID="ID_1917324440" MODIFIED="1502506594143" TEXT="class Meta">
+<node CREATED="1502506598186" ID="ID_1005561309" MODIFIED="1502506599901" TEXT="model"/>
+<node CREATED="1502506711507" ID="ID_978286875" MODIFIED="1502506712857" TEXT="fields"/>
+<node CREATED="1502506736791" ID="ID_300264408" MODIFIED="1502506739440" TEXT="widgets"/>
+<node CREATED="1502506746903" ID="ID_325454278" MODIFIED="1502506749530" TEXT="labels"/>
+<node CREATED="1502506757626" ID="ID_57682328" MODIFIED="1502506762282" TEXT="error_messages">
+<node CREATED="1502506768461" ID="ID_973534406" MODIFIED="1502506789111" TEXT="{field: {}}"/>
+</node>
+</node>
+<node CREATED="1502506839392" ID="ID_84859457" MODIFIED="1502507013331" TEXT="age = forms.ChoiceField(widget=forms.RadioSelect)"/>
+<node CREATED="1502507039646" ID="ID_774557436" MODIFIED="1502507065346" TEXT="ModelForm(data=request.POST)">
+<node CREATED="1502507070635" ID="ID_8780008" MODIFIED="1502507072712" TEXT="initial">
+<node CREATED="1502507107626" ID="ID_484554984" MODIFIED="1502507108613" TEXT="{}"/>
+</node>
+<node CREATED="1502507191448" ID="ID_923930147" MODIFIED="1502507192871" TEXT="instance">
+<node CREATED="1502507196543" ID="ID_387772356" MODIFIED="1502507201651" TEXT="models.objects.get()"/>
+</node>
+</node>
+</node>
+</node>
+<node CREATED="1502505653122" ID="ID_1627124786" MODIFIED="1502505699461" POSITION="right" TEXT="&#x88c5;&#x9970;&#x5668;">
+<node CREATED="1502507229036" ID="ID_92369176" MODIFIED="1502507292454" TEXT="&#x4e3a;&#x4e86;&#x7ed9;&#x5f88;&#x591a;&#x51fd;&#x6570;&#x63d0;&#x4f9b;&#x4e00;&#x4e2a;&#x516c;&#x5171;&#x7684;&#x4ee3;&#x7801;&#xff08;&#x5728;&#x51fd;&#x6570;&#x6267;&#x884c;&#x4e4b;&#x524d;&#x548c;&#x6267;&#x884c;&#x4e4b;&#x540e;&#xff09;"/>
+<node CREATED="1502507296448" ID="ID_480302415" MODIFIED="1502507304484" TEXT="&#x5b9a;&#x4e49;">
+<node CREATED="1502507511082" ID="ID_307013277" MODIFIED="1502507512314" TEXT="form functools import wraps&#xa;&#xa;def login_required(func):&#xa;&#xa;    @wraps(func)&#xa;    def wrapper(*args, **kwrags):&#xa;        print(&apos;before&apos;)&#xa;        rt = func(*args, **kwargs)&#xa;        print(&apos;after&apos;)&#xa;        return rt&#xa;&#xa;    return wrapper"/>
+</node>
+<node CREATED="1502507304945" ID="ID_319900169" MODIFIED="1502507306316" TEXT="&#x4f7f;&#x7528;">
+<node CREATED="1502507799300" ID="ID_1767161021" MODIFIED="1502507800605" TEXT="test_wrapper = login_required(test)&#xa;test_wrapper(2)&#xa;"/>
+<node CREATED="1502507817215" ID="ID_1389048683" MODIFIED="1502507820133" TEXT=" @login_required&#xa;def test1(n):&#xa;    print(n)&#xa;    return n * 2"/>
+</node>
+</node>
+<node CREATED="1502505674455" ID="ID_700664956" MODIFIED="1502505697531" POSITION="right" TEXT="&#x9762;&#x5411;&#x5bf9;&#x8c61;&#x591a;&#x7ee7;&#x627f;">
+<node CREATED="1502508483036" ID="ID_130010993" MODIFIED="1502508484474" TEXT="&#xa;class A(object):&#xa;    attr_a = &apos;A&apos;&#xa;    attr_comm = &apos;attr_comm_a&apos;&#xa;    def func_a(self):&#xa;        print(&apos;func_a&apos;)&#xa;    def func_comm(self):&#xa;        print(&apos;func_comm_a&apos;)&#xa;&#xa;class B(object):&#xa;    attr_b = &apos;B&apos;&#xa;    attr_comm = &apos;attr_comm_b&apos;&#xa;    def func_b(self):&#xa;        print(&apos;func_b&apos;)&#xa;    def func_comm(self):&#xa;        print(&apos;func_comm_b&apos;)&#xa;&#xa;class C(A):&#xa;    pass&#xa;&#xa;c = C();&#xa;c.attr_a, c.attr_comm =&gt; A, attr_comm_a&#xa;c.func_a(), c.func_comm =&gt; func_a, func_comm_a&#xa;&#xa;class D(B, A):&#xa;c.attr_a, c.attr_comm(B), c.attr_b&#xa;c.func_a(), c.func_comm()(B), c.func_b() &#xa;"/>
+<node CREATED="1502508916672" ID="ID_1371396898" MODIFIED="1502508918561" TEXT="mixin">
+<node CREATED="1502508919625" ID="ID_925486680" MODIFIED="1502509041898" TEXT="&#x7c7b;&#x6269;&#x5c55;&#x5df2;&#x6709;&#x7684;&#x7c7b;&#xa;&#xa;Mixin &#xa;&#x4e0d;&#x8fdb;&#x884c;&#x5b9e;&#x4f8b;&#x5316;&#xa;&#xa;A(Mixin, Base)&#xa;Mixin.func =&gt; Base.func&#xa;Mixin.func &#xa;    super().func()   ==&gt; Base.func&#xa;"/>
+</node>
+</node>
+<node CREATED="1502505636379" ID="ID_20370354" MODIFIED="1502505645847" POSITION="right" TEXT="&#x6587;&#x4ef6;&#x4e0a;&#x4f20;">
+<node CREATED="1502508981656" ID="ID_1665209998" MODIFIED="1502509058958" TEXT="form">
+<node CREATED="1502509078916" ID="ID_519882752" MODIFIED="1502509085245" TEXT="enctype">
+<node CREATED="1502509090510" ID="ID_1637682594" MODIFIED="1502509103189" TEXT="multipart/form-data"/>
+</node>
+<node CREATED="1502509104380" ID="ID_614978415" MODIFIED="1502509106581" TEXT="method">
+<node CREATED="1502509107387" ID="ID_1648632243" MODIFIED="1502509108540" TEXT="post"/>
+</node>
+<node CREATED="1502509111060" ID="ID_828102738" MODIFIED="1502509123966" TEXT="input type=file"/>
+</node>
+<node CREATED="1502509059242" ID="ID_333973018" MODIFIED="1502509063332" TEXT="view">
+<node CREATED="1502509159200" ID="ID_685948206" MODIFIED="1502509187923" TEXT="request.FILES"/>
+<node CREATED="1502509243721" ID="ID_1281114871" MODIFIED="1502509268137" TEXT="img = request.FILES,get(&apos;img&apos;, None)">
+<node CREATED="1502509535795" ID="ID_363206069" MODIFIED="1502509555684" TEXT="dir(img)"/>
+</node>
+<node CREATED="1502509225125" ID="ID_619116023" MODIFIED="1502509241767" TEXT="f = open(path, &apos;wb&apos;)"/>
+<node CREATED="1502509269455" ID="ID_1509948405" MODIFIED="1502509314202" TEXT="for chunk in img.chunks(): f.write(chunk)"/>
+<node CREATED="1502509315080" ID="ID_877074609" MODIFIED="1502509317549" TEXT="f.close()"/>
+<node CREATED="1502509333437" ID="ID_1925738359" MODIFIED="1502509363481" TEXT="with open(paht, &apos;wb&apos;) as f: f.write(&apos;test&apos;)">
+<node CREATED="1502509392067" ID="ID_494669256" MODIFIED="1502509423515" TEXT="&#x53ea;&#x8981;&#x6253;&#x5f00;&#x6210;&#x529f;&#xff0c;&#x4e0d;&#x7ba1;&#x5728;&#x4ee3;&#x7801;&#x6267;&#x884c;&#x662f;&#x5426;&#x6709;&#x5f02;&#x5e38;&#x90fd;&#x4f1a;&#x8fdb;&#x884c;&#x6587;&#x4ef6;&#x5173;&#x95ed;&#x64cd;&#x4f5c;"/>
+</node>
+</node>
+<node CREATED="1502509730236" ID="ID_236746725" MODIFIED="1502509738636" TEXT="&#x5b58;&#x50a8;&#x76ee;&#x5f55;">
+<node CREATED="1502509739527" ID="ID_1981050795" MODIFIED="1502509743442" TEXT="media"/>
+<node CREATED="1502509748220" ID="ID_437269703" MODIFIED="1502509756869" TEXT="settings">
+<node CREATED="1502509760383" ID="ID_1015393468" MODIFIED="1502509793056" TEXT="MEDIA_ROOT">
+<node CREATED="1502509819316" ID="ID_742341022" MODIFIED="1502509825117" TEXT="&#x5b58;&#x653e;"/>
+</node>
+<node CREATED="1502509804483" ID="ID_882213847" MODIFIED="1502509808940" TEXT="MEDIA_URL">
+<node CREATED="1502509826353" ID="ID_233964399" MODIFIED="1502509832452" TEXT="&#x8bbf;&#x95ee;url"/>
+</node>
+</node>
+<node CREATED="1502509814841" ID="ID_1852585447" MODIFIED="1502509816880" TEXT="urls">
+<node CREATED="1502509837558" ID="ID_1441347806" MODIFIED="1502509877037" TEXT="static(MEDIA_URL, document_root=MEDIA_ROOT)"/>
+</node>
+<node CREATED="1502509885364" ID="ID_1717133115" MODIFIED="1502509886914" TEXT="template">
+<node CREATED="1502509887858" ID="ID_579011414" MODIFIED="1502509896195" TEXT="/media/xxxxx"/>
+</node>
+</node>
+</node>
+</node>
+</map>

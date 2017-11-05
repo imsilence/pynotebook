@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>用户编辑</title>
+    </head>
+    <body>
+        <h1>用户编辑</h1>
+        <form action="/user/modify_user/" method="POST">
+            {% csrf_token %}
+            <!--
+                <input type="hidden" name="id" value="{{ user.id }}"/><br/><br/>
+                <label>用户名:</label><input type="text" name="username" value="{{ user.username }}"/><br/><br/>
+                <label>电话号码:</label><input type="text" name="tel" value="{{ user.tel }}"/><br/><br/>
+                <label>年龄:</label><input type="text" name="age" value="{{ user.age }}"/><br/><br/>
+            -->
+            <table>
+                {{ form.as_table }}
+            </table>
+            <input type="submit" value="编辑"/><br/><br/>
+        </form>
+    </body>
+</html>

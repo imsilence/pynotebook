@@ -1,0 +1,57 @@
+{% extends 'layout.html' %}
+
+{% load staticfiles %}
+
+{% block title %}购物车{% endblock %}
+
+{% block container %}
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-borderd">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>商品</th>
+                    <th>单价</th>
+                    <th>数量</th>
+                    <th>小计</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for shopping_car in shopping_cars %}
+                    <tr>
+                        <td>
+                            <input type="checkbox" name="shopping_car" value="{{ shopping_car.pk }}" />
+                        </td>
+                        <td>
+                            {{ shopping_car.goods.name }}
+                        </td>
+                        <td>
+                            <span id="shopping_car_price_{{shopping_car.pk}}" data-price="{{ shopping_car.goods.price }}"> {{ shopping_car.goods.price }}</span>
+                        </td>
+                        <td>
+                            <span id="shopping_car_num_{{shopping_car.pk}}" data-num="{{ shopping_car.num }}">{{ shopping_car.num }}</span>
+                        </td>
+                        <td><span data-id="{{ shopping_car.pk }}" class="total-price"></span></td>
+                        <td>
+                            <a>删除</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
+{% block js %}
+    jQuery(document).ready(function() {
+        jQuery("span.total-price").each(function() {
+            var id = jQuery(this).data('id');
+            var num = jQuery('span#shopping_car_num_' + id).data('num');
+            var price = jQuery('span#shopping_car_price_' + id).data('price');
+            console.log([num, price])
+            jQuery(this).text(Number(num) * Number(price));
+        });
+    });
+{% endblock %}

@@ -1,0 +1,106 @@
+{% extends 'layout.html' %}
+
+{% load staticfiles %}
+
+{% block title %}商品详情{% endblock %}
+
+{% block links %}
+<link rel="stylesheet" type="text/css" href="{% static 'goods/css/goods_detail.css' %}"/>
+{% endblock %}
+
+{% block container %}
+<div class="row">
+    <div class="col-xs-12">
+        <div class="row product-detail">
+            <div class="col-xs-12">
+                <h2>{{ object.name }}</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class= "col-xs-4">
+                <img id="big_img" alt="" src="{{ object.img.url }}" class="img-responsive" style="width:250px; height: 300px;">
+            </div>
+            <div class= "col-xs-7">
+                <div class="col-xs-10">
+                    <div class="row">
+                        <div class="col-xs-7">
+                            <strong>名称: </strong>
+                            <span>{{ object.name }}</span>
+                            <br/>
+                            <strong>分类: </strong>
+                            <span>{{ object.category.name }}</span>
+                            <br/>
+                            <strong>描述: </strong>
+                            <span>{{ object.desc }}</span>
+                            <br/>
+                            <strong>上架时间: </strong>
+                            <span>{{ object.create_time }}</span>
+                            <br/>
+                        </div>
+                        <div class="col-xs-5">
+                            <span class="label label-warning price">{{ object.price }}</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-7">
+                            {% for ext in goods.goodsext_set.all %}
+                                {% if ext.status == 0%}
+                                    <strong>{{ ext.key }}: </strong>
+                                    <span>{{ ext.value }}</span>
+                                    <br/>
+                                {% endif %}
+                            {% endfor %}
+                            <hr/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <a href="javascript:history.back(-1);" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> 回退 </a>
+                        </div>
+                        <div class="col-xs-5">
+                            <form class="form-horizontal">
+                                <div class="form-group">
+                                    <label class="col-xs-6 control-label">数量</label>
+                                    <div class="col-xs-6">
+                                        <select class="form-control" id="goods_num">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-xs-2">
+                            <a href="javascript:void(0)" class="btn btn-primary" id="btn_add_shoppingcar"><i class="glyphicon glyphicon-shopping-cart"></i> 加入购物车</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block js %}
+    jQuery(document).ready(function() {
+        jQuery("#btn_add_shoppingcar").on("click", function() {
+            var params = {
+                "goods_id" : {{ object.pk }}, //?
+                "num" : jQuery('#goods_num').val(), //?
+                "csrfmiddlewaretoken" : "{{ csrf_token }}"
+            };
+            jQuery.post(
+                "{% url 'goods:add_shopping_car' %}",
+                params,
+                function(result) {
+                    if(result['status'] == 200) {
+                        swal("添加购物车成功");
+                        refresh_shopping_car();
+                    }
+                },
+                'json');
+        });
+    });
+{% endblock %}

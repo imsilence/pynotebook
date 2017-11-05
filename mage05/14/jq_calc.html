@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>计算器</title>
+    </head>
+    <body>
+        <!--
+        三个INPUT
+        1 input left
+        2 input right
+        3 input result
+        一个按钮
+        点击按钮时获取第一个input的值 和 第二个input的值，将o两个值得和放在 第三个input中
+        -->
+        <input type="text" id="left" value=""/>
+        <select id="operate">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input type="text" id="right" value=""/>
+        <input type="button" id="calc" value="="/>
+        <input type="text" id="result" value=""/>
+
+        <script type="text/javascript" src="jquery-1.11.1.js"></script>
+        <script type="text/javascript">
+            var calc = function() {
+                var left = jQuery("#left").val(),
+                    right = jQuery("#right").val(),
+                    operate = jQuery("#operate").val();
+                if(left == '' || right == '') {
+                    return;
+                }
+                left = Number(left);
+                right = Number(right);
+                var result = "ERROR";
+                if(!isNaN(left) && !isNaN(right)) {
+                    switch(operate) {
+                        case "+":
+                            result = left + right;
+                            break;
+                        case "-":
+                            result = left - right;
+                            break;
+                        case "*":
+                            result = left * right;
+                            break;
+                        default:
+                            if(right == 0){
+                                break;
+                            }
+                            result = left / right;
+                            break;
+                    }
+                }
+                jQuery("#result").val(result);
+            };
+            jQuery("#operate").on("change", calc);
+            jQuery("#calc").on("click", calc);
+        </script>
+    </body>
+</html>

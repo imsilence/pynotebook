@@ -1,0 +1,212 @@
+{% extends 'base.html' %}
+
+{% block container %}
+<table class="table table-bordered table-striped table-hover">
+    <thead>
+        <tr>
+            <th class="col-md-2">主机名</th>
+            <th class="col-md-1">IP地址</th>
+            <th class="col-md-2">平台</th>
+            <th>CPU</th>
+            <th>内存</th>
+            <th class="col-md-1">用户</th>
+            <th class="col-md-1">应用</th>
+            <th class="col-md-2">地址</th>
+            <th class="col-md-1">备注</th>
+            <th class="col-md-1">操作</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for obj in object_list %}
+            <tr>
+                <td>
+                    {% if not obj.is_online %}
+                        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    {% endif %}
+                    {{ obj.hostname }}
+                </td>
+                <td>{{ obj.ip }}</td>
+                <td>{{ obj.platform }}/{{ obj.arch }}</td>
+                <td>{{ obj.cpu }}核</td>
+                <td>{{ obj.mem|filesizeformat }}</td>
+                <td>{{ obj.user }}</td>
+                <td>{{ obj.application }}</td>
+                <td>{{ obj.addr }}</td>
+                <td>{{ obj.remark }}</td>
+                <td>
+                    <a data-toggle="modal" data-target="#client" data-backdrop="static">编辑</a>
+                    <a data-toggle="modal" data-target="#resource" data-backdrop="static" data-url="{% url 'agent:resource' obj.uuid %}">监控</a>
+                    <a data-toggle="modal" data-target="#event" data-backdrop="static">告警</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+
+{% block dialog %}
+<div class="modal fade" id="resource" tabindex="-1" role="dialog" aria-labelledby="resource">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div id="resource-panel" style="width: 600px;height:400px;"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="client" tabindex="-1" role="dialog" aria-labelledby="resource">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+             <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">编辑</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="user" class="col-sm-2 control-label">用户</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="user" name="user" placeholder="用户" value="kk" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="application" class="col-sm-2 control-label">应用</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="application" name="application" placeholder="应用" value="MySQL数据库" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="addr" class="col-sm-2 control-label">位置</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="addr" name="addr" placeholder="位置" value="北京市-海淀机房-一机架" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="remark" class="col-sm-2 control-label">备注</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="remark" name="remark" placeholder="备注" value="" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="event" tabindex="-1" role="dialog" aria-labelledby="event">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">最近20条告警</h4>
+            </div>
+            <div class="modal-body">
+                <table class="table table-bordered table-hover table-striped table-condensed">
+                    <thead>
+                        <tr>
+                            <th>时间</th>
+                            <th>内容</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2017-10-27 22:49:00</td>
+                            <td>连续3分钟CPU使用率超过80%</td>
+                        </tr>
+                        <tr>
+                            <td>2017-10-27 02:49:00</td>
+                            <td>连续3分钟内存使用率超过80%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+jQuery(document).ready(function() {
+    var th = null;
+    var chart = echarts.init(document.getElementById('resource-panel'));
+    var option = {
+        title: {
+            text: 'CPU、内存监控'
+        },
+        tooltip: {
+            trigger: 'axis',
+            formatter: function (params) {
+                var name = null, tips = [];
+                jQuery.each(params, function(index, value) {
+                    name = value['name'];
+                    tips.push(value['seriesName'] + ':' + value['value'] + '%');
+                });
+                return name + '<br/>' + tips.join('<br/>');
+            },
+            axisPointer: {
+                animation: false
+            }
+        },
+        legend: {
+            data:['CPU', '内存']
+        },
+        xAxis: {
+            data: []
+        },
+        yAxis: {
+            'max' : 100
+        },
+        series: []
+    };
+    function reload(url) {
+        jQuery.get(url, function(response) {
+            if(response['code'] != 200) {
+                return;
+            }
+            var _xAxis_data = [];
+            var _cpu_data = [];
+            var _mem_data = [];
+            jQuery.each(response['result'], function(index, value) {
+                _xAxis_data.unshift(value['time']);
+                _cpu_data.unshift(value['cpu']);
+                _mem_data.unshift(value['mem']);
+            });
+            option['xAxis'] = {'data' : _xAxis_data};
+            option['series'] = [
+                {name: '内存', type:'line', data:_mem_data},
+                {name: 'CPU', type:'line', data:_cpu_data},
+            ];
+            chart.setOption(option);        
+        }, 'json');
+    }
+
+    jQuery('#resource').on('show.bs.modal', function (e) {
+        var target = jQuery(e.relatedTarget);
+        var url = target.data('url');
+        reload(url);
+        th = setInterval(function() {
+            reload(url);
+        }, 10 * 1000)
+    });
+
+    jQuery('#resource').on('hide.bs.modal', function (e) {
+        if(th) {
+            clearInterval(th);
+            th = null;
+        }
+    });
+});
+
+
+{% endblock %}

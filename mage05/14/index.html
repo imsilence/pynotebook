@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>js学习</title>
+    </head>
+    <body>
+        <div id="mydiv"></div>
+        <script type="text/javascript">
+
+
+            //变量定义
+            var name = 'kk';
+            var age = 29;
+
+            var isG = true,
+                sex = 1,
+                tel = '1522909xxxx';
+
+            console.log(name);
+            console.log(age);
+            console.log("my name:" + name + ", i'm " + age + " years old");
+
+            /* 四则运算 */
+            console.log(1 + 1);
+            console.log(2 - 1);
+            console.log(2.1 * 5);
+            console.log(2.1 / 5);
+
+            console.log("my name: " + name);
+            console.log(name + age);
+            console.log(age + name);
+
+            /* 布尔运算 */
+            console.log(true && true); //true
+            console.log(true && false); //false
+            console.log(false && true); //false
+            console.log(false && false); //false
+
+            if(age > 50) {
+                console.log("老年");
+            } else if (age > 18 ){
+                console.log("中年");
+            } else {
+                console.log("少年");
+            }
+
+            switch(age) {
+                case 1:
+                    console.log(1);
+                    break;
+                case 29:
+                    console.log("29");
+                    break;
+                case 30:
+                    console.log(30);
+                    break;
+                default:
+                    console.log('default');
+                    break;
+
+            }
+
+            var i = 0;
+            var total = 0;
+            while(i <= 100) {
+                total += i;
+                i += 1;
+            }
+            console.log(total);
+
+            i = 0;
+            total = 0;
+            //至少执行一次
+            do {
+                total += i;
+                i += 1;
+            } while(i<= 100);
+            console.log(total);
+
+
+            while(false) {
+                console.log("while");
+            }
+            do {
+                console.log("do while");
+            } while(false);
+            /*
+            1. 初始化 var i= 0
+            2. 判断 i <= 100
+            3. 循环体执行完成后 再执行  i += 1
+            i+=1
+            i++ 先返回i, 再给i += 1
+            ++i 先计算 i += 1, 再返回i
+            */
+            total = 0;
+            for(var j = 0; j <= 100; j++) {
+                total += j;
+            }
+            console.log(total);
+
+
+			for(var j = 0; j <= 10; j++) {
+				if(j == 5) {
+					break;
+				}
+				console.log(j);
+			}
+
+			for(var j = 0; j <= 10; j++) {
+				if(j == 5) {
+					continue;
+				}
+				console.log(j);
+			}
+
+
+			var scores = [1, 2, 3, 4, 5];
+			console.log(scores);
+			console.log(scores[0]);
+			console.log(scores[3]);
+			console.log(scores[5]);
+
+			scores[0] = 100;
+			console.log(scores);
+			scores[5] = 1000;
+
+			scores[6] = 10000;
+			console.log(scores);
+
+			console.log(scores.length);
+			scores[scores.length] = 'a';
+			console.log(scores);
+			//scores[scores.length + 100] = 'a'; //避免夸索引放值
+			//console.log(scores);
+
+			for(var j = 0; j < scores.length; j++) {
+				console.log(scores[j]);
+			}
+			scores.push("b");
+			console.log(scores);
+			console.log(scores.pop());
+			console.log(scores.join('-'));
+
+			//object
+			//var user = {"name" : "kk", "age" : 29}; //key都是字符串
+			var user = {name : "kk", age : 29}
+			console.log(user);
+			user['tel'] = '1zzzzz'; // 'tel'字符串，可以是变量
+			console.log(user.name); //name  对应的key，不能是变量
+			for(var key in user) {
+				console.log(key);
+				console.log(user[key]);
+			}
+
+			function add(i, j) {
+				return j + i;
+			}
+
+			console.log(add(1, 2));
+        </script>
+    </body>
+</html>

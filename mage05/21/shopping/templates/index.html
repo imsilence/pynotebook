@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block container %}
+<div class="row">
+	{% if messages %}
+	    {% for message in messages %}
+			{% if message.tags == 'info' %}
+				<div class="alert alert-success alert-dismissible" role="alert">
+			{% else %}
+				<div class="alert alert-danger alert-dismissible" role="alert">
+			{% endif %}
+			  		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			  		{{ message }}
+  				</div>
+	    {% endfor %}
+	{% endif %}
+</div>
+<div class="row">
+	{% for obj in object_list %}
+	<div class="col-xs-6 col-md-3">
+		<a class="thumbnail" href="detail.html">
+			<img alt="" style="width:250px; height: 300px;" src="{{ obj.img.url }}" class="img-responsive">
+		</a>
+		<div class="panel-title text-center">
+			<a href="single-item.html">{{ obj.name }}</a>
+		</div>
+		<div class="text-center">
+			<h1 class="badge">价格: {{obj.price}}</h1>
+		</div>
+	</div>
+	{% endfor %}
+</div>
+<div class="row">
+	<div class="col-xs-8 col-xs-offset-4">
+		<nav>
+		  <ul class="pager">
+		  	<li>一共有{{ paginator.count }}条商品信息, 共{{ paginator.num_pages }}页</li>
+		  	<li {% if not page_obj.has_previous %} class="disabled" {% endif %}>
+		    	<a href="{% url 'goods:goods' %}?q={{ request.GET.q }}&page=1">第一页</a>
+		    </li>
+		    <li {% if not page_obj.has_previous %} class="disabled" {% endif %}>
+		    	<a href="{% url 'goods:goods' %}?q={{ request.GET.q }}&page={% if page_obj.has_previous %}{{ page_obj.previous_page_number }}{% endif %}">前一页</a>
+		    </li>
+		    <li>当前第 {{ page_obj.number }} 页</li>
+		    <li {% if not page_obj.has_next %} class="disabled" {% endif %}>
+		    	<a href="{% url 'goods:goods' %}?q={{ request.GET.q }}&page={% if page_obj.has_next %}{{ page_obj.next_page_number }}{% endif %}">后一页</a>
+		    </li> 
+		    <li {% if not page_obj.has_next %} class="disabled" {% endif %}>
+		    	<a href="{% url 'goods:goods' %}?q={{ request.GET.q }}&page={{ paginator.num_pages }}">最后一页</a>
+		    </li>
+		  </ul>
+		</nav>	
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+/* css 定义位置*/
+/*
+    选择器
+    id:  #开头，标签中id属性值为样式名定义相同， 原则上每一个标签的ID都要不一样
+    tag: 无开头，所有标签名称与样式名定义相同都应用
+    class: .开头，所有标签中class存在样式名定义都应用
+*/
+#mydiv1 {
+    background-color: gray;
+    width: 200px;
+    height: 300px;
+}
+
+span {
+    color: gray;
+    font-size: 20px;
+}
+
+.myclass1 {
+    color:yellow;
+    font-size: 20px;
+}
+.myclass2 {
+    width: 200px;
+    height: 200px;
+    background-color: red;
+}

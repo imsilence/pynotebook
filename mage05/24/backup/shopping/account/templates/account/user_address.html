@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% load static %}
+
+{% block container %}
+<button class="btn btn-primary btn-create">新增</button><br/></br>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>收货人</th>
+            <th>联系方式</th>
+            <th>固定电话</th>
+            <th>收获地址</th>
+            <th>邮箱</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for object in addresses %}
+        <tr>
+            <td>{{ object.name }}</td>
+            <td>{{ object.telephone }}</td>
+            <td>{{ object.fixedphone }}</td>
+            <td>{{ object.addr }}</td>
+            <td>{{ object.email }}</td>
+            <td>
+                <a href="{% url 'account:update_user_address' object.pk %}">编辑</a>
+                <a href="{% url 'account:delete_user_address' object.pk %}">删除</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+
+{% block js %}
+jQuery(document).ready(function() {
+    jQuery('.btn-create').on('click', function() {
+        window.location.replace("{% url 'account:create_user_address' %}");
+    });
+});
+{% endblock %}

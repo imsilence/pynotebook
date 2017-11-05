@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>测试文件</title>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+    </head>
+    <body>
+        我是一个HTML <br/>
+        表单:
+        <form action="/user/save/" method="POST">
+            <label>用户名:</label><input type="text" name="username" value="kk" /> <br/>
+            <label>密码:</label><input type="password" name="password" value="123456" /> <br/>
+            <label>性别:</label><input type="radio" name="sex" value="1"/>男
+                                <input type="radio" name="sex" value="0" checked="checked"/>女 <br/>
+            <label>是否接受短信消息:</label><input type="radio" name="sms" value="1" checked="checked"/>是
+                                <input type="radio" name="sms" value="0"/>否 <br/>
+
+            <label>爱好:</label><input type="checkbox" name="hobby" value="basketball"/>篮球
+                                <input type="checkbox" name="hobby" value="football"/>足球
+                                <input type="checkbox" name="hobby" value="pingpong" checked="checked"/>乒乓球
+                                <br/>
+            <label>部门:</label>
+                <select name="department">
+                    <option value="1">研发1部</option>
+                    <option value="2" selected="selected">研发2部</option>
+                    <option value="3">研发3部</option>
+                </select>
+                <br/>
+            <label class="myclass1">简介</label><textarea name="remark"></textarea><br/>
+            <label>出生日期</label> <input type="date" name="birthday" /><br/>
+            <label>邮件</label> <input type="email" name="email" /><br/>
+            <label>主页</label> <input type="url" name="url" /><br/>
+            <label>喜欢的颜色</label> <input type="color" name="color" /><br/>
+            <input type="submit" value="提交" />
+        </form>
+
+        表格:
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>用户名</th>
+                    <th>联系方式</th>
+                    <th>年龄</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>kk</td>
+                    <td>123456</td>
+                    <td>29</td>
+                    <td>
+                        <a>删除</a> <a>编辑</a> <a>修改密码</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>woniu</td>
+                    <td>1234567</td>
+                    <td>29</td>
+                    <td>
+                        <a>删除</a> <a>编辑</a> <a>修改密码</a>
+                    </td>
+                </tr>
+            </body>
+            <tfoot>
+            </tfoot>
+        </table>
+        <a href="http://www.baidu.com" style="color:red;">跳转到百度</a>
+
+        <h1>我是1级标题</h1><h1>我是1级标题</h1><h1>我是1级标题</h1><h1>我是1级标题</h1><h1>我是1级标题</h1><h1>我是1级标题</h1>
+        <h2>我是2级标题</h2>
+        <h3>我是3级标题</h3>
+        <h4>我是4级标题</h4>
+        <h5>我是5级标题</h5>
+        <h6>我是6级标题</h6>
+
+        <img src="http://scimg.jb51.net/allimg/151228/14-15122Q60431W4.jpg" />
+
+        <div style="background-color:green;width:300px;height:200px;">我是第1个块</div>
+        <div id="mydiv1">我是第2个块</div>
+        <div class="myclass1 myclass2">我是第3个块</div>
+        <div>我是第1个块</div>
+        <div style="margin:10px;padding:20px;background-color:red;width:200px;height:200px;border-width:5px;border-style:solid;border-radius:100px;">我是第2个块</div>
+        <div style="background-color:red;width:300px;height:200px;position:absolute;top:300px;right:200px;">我是第3个块</div>
+        <span>我是第1个span</span>
+        <span>我是第2个span</span>
+        <span>我是第3个span</span>
+        <span>我是第1个span</span>
+        <span>我是第2个span</span>
+        <span>我是第3个span</span>
+        <span  class="myclass1">我是第1个span</span>
+        <span>我是第2个span</span>
+        <span>我是第3个span</span>
+        <p  class="myclass1">我是第一段</p><p>我是第2段</p><p>我是第3段</p>
+
+        <ul>
+            <li>我是第一项</li>
+            <li>我是第2项</li>
+            <li>我是第3项</li>
+            <li>我是第4项</li>
+        </ul>
+
+        <ol>
+            <li>我是第一项</li>
+            <li>我是第2项</li>
+            <li>我是第3项</li>
+            <li>我是第4项</li>
+        </ol>
+
+        <iframe src="http://www.baidu.com" width="100%" height="300px"></iframe>
+
+        <pre>
+            a =
+            c= 2
+        </pre>
+    </body>
+</html>

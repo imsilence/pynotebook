@@ -1,0 +1,575 @@
+2017-10-28 02:40:44,822 - __main__ - INFO:agent[3ce3c208bac411e7828aec0ec43ee3ea][3996] is running...
+2017-10-28 02:40:44,822 - __main__ - INFO:plugin[client] is running
+2017-10-28 02:40:44,823 - __main__ - INFO:plugin[ens] is running
+2017-10-28 02:40:44,824 - __main__ - INFO:plugin[heartbeat] is running
+2017-10-28 02:40:44,825 - __main__ - INFO:plugin[resource] is running
+2017-10-28 02:40:44,829 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:40:44,839 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:40:44,840 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509129644.8231213}
+2017-10-28 02:40:44,841 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:40:44,847 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/resource/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 153
+2017-10-28 02:40:44,848 - plugins.ens - DEBUG:success send log[resource]:{'time': 1509129644.8241212, 'cpu': 16.9, 'mem': 62.8}
+2017-10-28 02:40:44,850 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:40:44,857 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/client/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 510
+2017-10-28 02:40:44,857 - plugins.ens - DEBUG:success send log[client]:{'time': 1509129644.8221211, 'ip': '192.168.1.111', 'mac': 'ec:0e:c4:3e:e3:ea', 'hostname': 'A000823-NC', 'pid': 3996, 'platform': 'Windows-7-6.1.7601-SP1', 'arch': '64bit', 'cpu': 8, 'mem': 8296923136}
+2017-10-28 02:40:59,825 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:40:59,833 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:40:59,834 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509129659.8249795}
+2017-10-28 02:41:14,826 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:41:14,836 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:41:14,837 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509129674.8254693}
+2017-10-28 02:41:29,831 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:41:29,862 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 64
+2017-10-28 02:41:29,862 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509129689.831399}
+2017-10-28 02:41:44,834 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:41:44,865 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 64
+2017-10-28 02:41:44,865 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509129704.834026}
+2017-10-28 02:41:44,865 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:41:44,880 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/resource/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 152
+2017-10-28 02:41:44,880 - plugins.ens - DEBUG:success send log[resource]:{'time': 1509129704.834026, 'cpu': 9.2, 'mem': 63.4}
+2017-10-28 02:41:44,880 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:41:44,990 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/client/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 509
+2017-10-28 02:41:44,990 - plugins.ens - DEBUG:success send log[client]:{'time': 1509129704.834026, 'ip': '192.168.1.111', 'mac': 'ec:0e:c4:3e:e3:ea', 'hostname': 'A000823-NC', 'pid': 3996, 'platform': 'Windows-7-6.1.7601-SP1', 'arch': '64bit', 'cpu': 8, 'mem': 8296923136}
+2017-10-28 02:41:59,847 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:41:59,863 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:41:59,863 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509129719.8476534}
+2017-10-28 02:42:14,849 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:42:14,864 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:42:14,880 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509129734.8492806}
+2017-10-28 02:42:29,853 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:42:29,853 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:42:29,853 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509129749.8539073}
+2017-10-28 02:42:44,840 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:42:44,856 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/resource/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 152
+2017-10-28 02:42:44,856 - plugins.ens - DEBUG:success send log[resource]:{'time': 1509129764.8409345, 'cpu': 7.4, 'mem': 63.5}
+2017-10-28 02:42:44,856 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:42:44,872 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/client/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 510
+2017-10-28 02:42:44,872 - plugins.ens - DEBUG:success send log[client]:{'time': 1509129764.8409345, 'ip': '192.168.1.111', 'mac': 'ec:0e:c4:3e:e3:ea', 'hostname': 'A000823-NC', 'pid': 3996, 'platform': 'Windows-7-6.1.7601-SP1', 'arch': '64bit', 'cpu': 8, 'mem': 8296923136}
+2017-10-28 02:42:44,872 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:42:44,887 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:42:44,887 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509129764.8565345}
+2017-10-28 02:42:59,863 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:42:59,894 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:42:59,894 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509129779.8631616}
+2017-10-28 02:43:14,864 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:43:14,880 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:43:14,895 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509129794.8647885}
+2017-10-28 02:43:29,869 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:43:29,885 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:43:29,885 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509129809.8694158}
+2017-10-28 02:43:44,842 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:43:44,858 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/resource/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 152
+2017-10-28 02:43:44,858 - plugins.ens - DEBUG:success send log[resource]:{'time': 1509129824.8428426, 'cpu': 6.9, 'mem': 63.5}
+2017-10-28 02:43:44,874 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:43:44,889 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/client/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 510
+2017-10-28 02:43:44,889 - plugins.ens - DEBUG:success send log[client]:{'time': 1509129824.8428426, 'ip': '192.168.1.111', 'mac': 'ec:0e:c4:3e:e3:ea', 'hostname': 'A000823-NC', 'pid': 3996, 'platform': 'Windows-7-6.1.7601-SP1', 'arch': '64bit', 'cpu': 8, 'mem': 8296923136}
+2017-10-28 02:43:44,889 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:43:44,905 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 64
+2017-10-28 02:43:44,905 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509129824.8740425}
+2017-10-28 02:43:59,874 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:43:59,889 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:43:59,889 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509129839.8740706}
+2017-10-28 02:44:14,876 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:44:14,876 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:44:14,876 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509129854.8769002}
+2017-10-28 02:44:29,877 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:44:29,893 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:44:29,893 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509129869.8779278}
+2017-10-28 02:44:44,849 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:44:44,865 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/resource/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 152
+2017-10-28 02:44:44,865 - plugins.ens - DEBUG:success send log[resource]:{'time': 1509129884.8497553, 'cpu': 6.3, 'mem': 63.5}
+2017-10-28 02:44:44,880 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:44:44,896 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/client/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 510
+2017-10-28 02:44:44,896 - plugins.ens - DEBUG:success send log[client]:{'time': 1509129884.8497553, 'ip': '192.168.1.111', 'mac': 'ec:0e:c4:3e:e3:ea', 'hostname': 'A000823-NC', 'pid': 3996, 'platform': 'Windows-7-6.1.7601-SP1', 'arch': '64bit', 'cpu': 8, 'mem': 8296923136}
+2017-10-28 02:44:44,896 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:44:44,912 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:44:44,912 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509129884.8809555}
+2017-10-28 02:44:59,884 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:44:59,900 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:44:59,900 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509129899.8845828}
+2017-10-28 02:45:14,887 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:45:14,887 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:45:14,887 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509129914.8872094}
+2017-10-28 02:45:29,892 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:45:29,892 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:45:29,908 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509129929.8928366}
+2017-10-28 02:45:44,856 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:45:44,876 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/resource/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 152
+2017-10-28 02:45:44,876 - plugins.ens - DEBUG:success send log[resource]:{'time': 1509129944.8564637, 'cpu': 7.1, 'mem': 64.0}
+2017-10-28 02:45:44,886 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:45:44,906 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/client/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 510
+2017-10-28 02:45:44,906 - plugins.ens - DEBUG:success send log[client]:{'time': 1509129944.8564637, 'ip': '192.168.1.111', 'mac': 'ec:0e:c4:3e:e3:ea', 'hostname': 'A000823-NC', 'pid': 3996, 'platform': 'Windows-7-6.1.7601-SP1', 'arch': '64bit', 'cpu': 8, 'mem': 8296923136}
+2017-10-28 02:45:44,916 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:45:44,936 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:45:44,936 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509129944.8964636}
+2017-10-28 02:45:59,899 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:45:59,914 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:45:59,914 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509129959.899091}
+2017-10-28 02:46:14,903 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:46:14,903 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 64
+2017-10-28 02:46:14,903 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509129974.903718}
+2017-10-28 02:46:29,904 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:46:29,935 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 64
+2017-10-28 02:46:29,935 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509129989.9043448}
+2017-10-28 02:46:44,870 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:46:44,886 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/resource/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 152
+2017-10-28 02:46:44,886 - plugins.ens - DEBUG:success send log[resource]:{'time': 1509130004.8705733, 'cpu': 7.1, 'mem': 64.2}
+2017-10-28 02:46:44,901 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:46:44,917 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/client/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 510
+2017-10-28 02:46:44,917 - plugins.ens - DEBUG:success send log[client]:{'time': 1509130004.8705733, 'ip': '192.168.1.111', 'mac': 'ec:0e:c4:3e:e3:ea', 'hostname': 'A000823-NC', 'pid': 3996, 'platform': 'Windows-7-6.1.7601-SP1', 'arch': '64bit', 'cpu': 8, 'mem': 8296923136}
+2017-10-28 02:46:44,917 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:46:44,948 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 64
+2017-10-28 02:46:44,948 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130004.9173732}
+2017-10-28 02:46:59,931 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:46:59,931 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:46:59,931 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130019.9315999}
+2017-10-28 02:47:14,940 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:47:14,956 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 64
+2017-10-28 02:47:14,971 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130034.9406283}
+2017-10-28 02:47:29,954 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:47:29,955 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:47:29,955 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130049.953855}
+2017-10-28 02:47:44,880 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:47:44,896 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/resource/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 152
+2017-10-28 02:47:44,896 - plugins.ens - DEBUG:success send log[resource]:{'time': 1509130064.8804817, 'cpu': 6.3, 'mem': 64.5}
+2017-10-28 02:47:44,896 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:47:44,927 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/client/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 510
+2017-10-28 02:47:44,927 - plugins.ens - DEBUG:success send log[client]:{'time': 1509130064.8804817, 'ip': '192.168.1.111', 'mac': 'ec:0e:c4:3e:e3:ea', 'hostname': 'A000823-NC', 'pid': 3996, 'platform': 'Windows-7-6.1.7601-SP1', 'arch': '64bit', 'cpu': 8, 'mem': 8296923136}
+2017-10-28 02:47:44,958 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:47:44,974 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 64
+2017-10-28 02:47:44,974 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130064.958482}
+2017-10-28 02:47:59,964 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:47:59,974 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:47:59,974 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130079.961109}
+2017-10-28 02:48:14,975 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:48:15,006 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:48:15,006 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130094.9757366}
+2017-10-28 02:48:29,980 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:48:29,980 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:48:29,980 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130109.9803638}
+2017-10-28 02:48:44,888 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:48:44,903 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/resource/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 152
+2017-10-28 02:48:44,919 - plugins.ens - DEBUG:success send log[resource]:{'time': 1509130124.8883903, 'cpu': 9.0, 'mem': 64.2}
+2017-10-28 02:48:44,919 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:48:44,935 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/client/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 510
+2017-10-28 02:48:44,935 - plugins.ens - DEBUG:success send log[client]:{'time': 1509130124.8883903, 'ip': '192.168.1.111', 'mac': 'ec:0e:c4:3e:e3:ea', 'hostname': 'A000823-NC', 'pid': 3996, 'platform': 'Windows-7-6.1.7601-SP1', 'arch': '64bit', 'cpu': 8, 'mem': 8296923136}
+2017-10-28 02:48:44,983 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:48:44,999 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:48:44,999 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130124.9839907}
+2017-10-28 02:48:59,996 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:49:00,027 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 64
+2017-10-28 02:49:00,027 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130139.9966183}
+2017-10-28 02:49:14,999 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:49:15,014 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:49:15,014 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130154.9992454}
+2017-10-28 02:49:30,009 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:49:30,041 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:49:30,041 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130170.0098727}
+2017-10-28 02:49:44,889 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:49:44,889 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/resource/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 152
+2017-10-28 02:49:44,889 - plugins.ens - DEBUG:success send log[resource]:{'time': 1509130184.8896992, 'cpu': 7.9, 'mem': 68.8}
+2017-10-28 02:49:44,889 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:49:44,905 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/client/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 510
+2017-10-28 02:49:44,905 - plugins.ens - DEBUG:success send log[client]:{'time': 1509130184.8896992, 'ip': '192.168.1.111', 'mac': 'ec:0e:c4:3e:e3:ea', 'hostname': 'A000823-NC', 'pid': 3996, 'platform': 'Windows-7-6.1.7601-SP1', 'arch': '64bit', 'cpu': 8, 'mem': 8296923136}
+2017-10-28 02:49:45,014 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:49:45,014 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:49:45,014 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130185.0144997}
+2017-10-28 02:50:00,017 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:50:00,017 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:50:00,017 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130200.0177777}
+2017-10-28 02:50:15,033 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:50:15,064 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:50:15,064 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130215.0330045}
+2017-10-28 02:50:30,035 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:50:30,035 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:50:30,035 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130230.0356317}
+2017-10-28 02:50:44,894 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:50:44,910 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/resource/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 153
+2017-10-28 02:50:44,926 - plugins.ens - DEBUG:success send log[resource]:{'time': 1509130244.894858, 'cpu': 10.9, 'mem': 66.9}
+2017-10-28 02:50:44,926 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:50:44,941 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/client/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 509
+2017-10-28 02:50:44,941 - plugins.ens - DEBUG:success send log[client]:{'time': 1509130244.894858, 'ip': '192.168.1.111', 'mac': 'ec:0e:c4:3e:e3:ea', 'hostname': 'A000823-NC', 'pid': 3996, 'platform': 'Windows-7-6.1.7601-SP1', 'arch': '64bit', 'cpu': 8, 'mem': 8296923136}
+2017-10-28 02:50:45,037 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:50:45,037 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:50:45,037 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130245.0372584}
+2017-10-28 02:51:00,040 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:51:00,071 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 64
+2017-10-28 02:51:00,071 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130260.0402863}
+2017-10-28 02:51:15,051 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:51:15,066 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:51:15,066 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130275.0513144}
+2017-10-28 02:51:30,054 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:51:30,070 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:51:30,070 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130290.0549414}
+2017-10-28 02:51:44,898 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:51:44,914 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/resource/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 152
+2017-10-28 02:51:44,929 - plugins.ens - DEBUG:success send log[resource]:{'time': 1509130304.8985682, 'cpu': 7.6, 'mem': 66.7}
+2017-10-28 02:51:44,929 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:51:44,945 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/client/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 510
+2017-10-28 02:51:44,945 - plugins.ens - DEBUG:success send log[client]:{'time': 1509130304.8985682, 'ip': '192.168.1.111', 'mac': 'ec:0e:c4:3e:e3:ea', 'hostname': 'A000823-NC', 'pid': 3996, 'platform': 'Windows-7-6.1.7601-SP1', 'arch': '64bit', 'cpu': 8, 'mem': 8296923136}
+2017-10-28 02:51:45,070 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:51:45,179 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:51:45,179 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130305.0701683}
+2017-10-28 02:52:00,074 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:52:00,089 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:52:00,089 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130320.0741963}
+2017-10-28 02:52:15,078 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:52:15,100 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 64
+2017-10-28 02:52:15,101 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130335.0745368}
+2017-10-28 02:52:30,079 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:52:30,100 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:52:30,102 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130350.0753946}
+2017-10-28 02:52:44,901 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:52:44,908 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/resource/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 152
+2017-10-28 02:52:44,909 - plugins.ens - DEBUG:success send log[resource]:{'time': 1509130364.8992424, 'cpu': 5.7, 'mem': 66.1}
+2017-10-28 02:52:44,910 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:52:44,918 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/client/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 510
+2017-10-28 02:52:44,918 - plugins.ens - DEBUG:success send log[client]:{'time': 1509130364.8992424, 'ip': '192.168.1.111', 'mac': 'ec:0e:c4:3e:e3:ea', 'hostname': 'A000823-NC', 'pid': 3996, 'platform': 'Windows-7-6.1.7601-SP1', 'arch': '64bit', 'cpu': 8, 'mem': 8296923136}
+2017-10-28 02:52:45,081 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:52:45,102 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 64
+2017-10-28 02:52:45,104 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130365.0762527}
+2017-10-28 02:53:00,078 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:53:00,089 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:53:00,090 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130380.0771105}
+2017-10-28 02:53:15,082 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:53:15,104 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:53:15,106 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130395.0779686}
+2017-10-28 02:53:30,082 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:53:30,105 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 64
+2017-10-28 02:53:30,106 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130410.0788264}
+2017-10-28 02:53:44,905 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:53:44,925 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/resource/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 152
+2017-10-28 02:53:44,926 - plugins.ens - DEBUG:success send log[resource]:{'time': 1509130424.8996744, 'cpu': 5.1, 'mem': 66.2}
+2017-10-28 02:53:44,928 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:53:44,942 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/client/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 510
+2017-10-28 02:53:44,943 - plugins.ens - DEBUG:success send log[client]:{'time': 1509130424.8996744, 'ip': '192.168.1.111', 'mac': 'ec:0e:c4:3e:e3:ea', 'hostname': 'A000823-NC', 'pid': 3996, 'platform': 'Windows-7-6.1.7601-SP1', 'arch': '64bit', 'cpu': 8, 'mem': 8296923136}
+2017-10-28 02:53:45,084 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:53:45,104 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 64
+2017-10-28 02:53:45,105 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130425.0796845}
+2017-10-28 02:54:00,085 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:54:00,112 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:54:00,113 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130440.0805428}
+2017-10-28 02:54:15,083 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:54:15,095 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:54:15,096 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130455.0814006}
+2017-10-28 02:54:30,084 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:54:30,092 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:54:30,093 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130470.0822587}
+2017-10-28 02:54:44,905 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:54:44,930 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/resource/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 152
+2017-10-28 02:54:44,932 - plugins.ens - DEBUG:success send log[resource]:{'time': 1509130484.900106, 'cpu': 7.6, 'mem': 67.2}
+2017-10-28 02:54:44,937 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:54:44,956 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/client/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 510
+2017-10-28 02:54:44,957 - plugins.ens - DEBUG:success send log[client]:{'time': 1509130484.9031062, 'ip': '192.168.1.111', 'mac': 'ec:0e:c4:3e:e3:ea', 'hostname': 'A000823-NC', 'pid': 3996, 'platform': 'Windows-7-6.1.7601-SP1', 'arch': '64bit', 'cpu': 8, 'mem': 8296923136}
+2017-10-28 02:54:45,087 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:54:45,108 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:54:45,110 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130485.0831165}
+2017-10-28 02:55:00,087 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:55:00,109 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 64
+2017-10-28 02:55:00,111 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130500.0839746}
+2017-10-28 02:55:15,088 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:55:15,111 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 64
+2017-10-28 02:55:15,113 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130515.0848324}
+2017-10-28 02:55:30,086 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:55:30,131 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:55:30,132 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130530.0856907}
+2017-10-28 02:55:44,904 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:55:44,924 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/resource/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 152
+2017-10-28 02:55:44,925 - plugins.ens - DEBUG:success send log[resource]:{'time': 1509130544.9005382, 'cpu': 7.5, 'mem': 68.1}
+2017-10-28 02:55:44,929 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:55:44,948 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/client/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 510
+2017-10-28 02:55:44,949 - plugins.ens - DEBUG:success send log[client]:{'time': 1509130544.9065382, 'ip': '192.168.1.111', 'mac': 'ec:0e:c4:3e:e3:ea', 'hostname': 'A000823-NC', 'pid': 3996, 'platform': 'Windows-7-6.1.7601-SP1', 'arch': '64bit', 'cpu': 8, 'mem': 8296923136}
+2017-10-28 02:55:45,087 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:55:45,096 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 64
+2017-10-28 02:55:45,097 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130545.0865486}
+2017-10-28 02:56:00,091 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:56:00,111 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 64
+2017-10-28 02:56:00,113 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130560.0874066}
+2017-10-28 02:56:15,089 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:56:15,098 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:56:15,099 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130575.0882647}
+2017-10-28 02:56:30,091 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:56:30,099 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 64
+2017-10-28 02:56:30,100 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130590.0891225}
+2017-10-28 02:56:44,905 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:56:44,924 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/resource/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 152
+2017-10-28 02:56:44,925 - plugins.ens - DEBUG:success send log[resource]:{'time': 1509130604.9009697, 'cpu': 9.5, 'mem': 67.7}
+2017-10-28 02:56:44,927 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:56:44,939 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/client/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 510
+2017-10-28 02:56:44,940 - plugins.ens - DEBUG:success send log[client]:{'time': 1509130604.9079702, 'ip': '192.168.1.111', 'mac': 'ec:0e:c4:3e:e3:ea', 'hostname': 'A000823-NC', 'pid': 3996, 'platform': 'Windows-7-6.1.7601-SP1', 'arch': '64bit', 'cpu': 8, 'mem': 8296923136}
+2017-10-28 02:56:45,091 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:56:45,105 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:56:45,106 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130605.0899806}
+2017-10-28 02:57:00,095 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:57:00,116 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 63
+2017-10-28 02:57:00,118 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130620.0908384}
+2017-10-28 02:57:15,096 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:57:15,121 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:57:15,122 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130635.0916967}
+2017-10-28 02:57:30,093 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:57:30,101 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 64
+2017-10-28 02:57:30,101 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130650.0925546}
+2017-10-28 02:57:44,902 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:57:44,909 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/resource/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 152
+2017-10-28 02:57:44,910 - plugins.ens - DEBUG:success send log[resource]:{'time': 1509130664.9014015, 'cpu': 9.0, 'mem': 67.7}
+2017-10-28 02:57:44,911 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:57:44,919 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/client/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 510
+2017-10-28 02:57:44,919 - plugins.ens - DEBUG:success send log[client]:{'time': 1509130664.9094021, 'ip': '192.168.1.111', 'mac': 'ec:0e:c4:3e:e3:ea', 'hostname': 'A000823-NC', 'pid': 3996, 'platform': 'Windows-7-6.1.7601-SP1', 'arch': '64bit', 'cpu': 8, 'mem': 8296923136}
+2017-10-28 02:57:45,094 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:57:45,102 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 64
+2017-10-28 02:57:45,103 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130665.0934126}
+2017-10-28 02:58:00,095 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:58:00,109 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:58:00,110 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130680.0942707}
+2017-10-28 02:58:15,100 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:58:15,127 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:58:15,128 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130695.0951285}
+2017-10-28 02:58:30,099 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:58:30,116 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:58:30,118 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130710.0959866}
+2017-10-28 02:58:44,902 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:58:44,909 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/resource/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 152
+2017-10-28 02:58:44,910 - plugins.ens - DEBUG:success send log[resource]:{'time': 1509130724.9018335, 'cpu': 9.4, 'mem': 68.0}
+2017-10-28 02:58:44,911 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:58:44,919 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/client/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 510
+2017-10-28 02:58:44,920 - plugins.ens - DEBUG:success send log[client]:{'time': 1509130724.9108338, 'ip': '192.168.1.111', 'mac': 'ec:0e:c4:3e:e3:ea', 'hostname': 'A000823-NC', 'pid': 3996, 'platform': 'Windows-7-6.1.7601-SP1', 'arch': '64bit', 'cpu': 8, 'mem': 8296923136}
+2017-10-28 02:58:45,100 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:58:45,303 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:58:45,305 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130725.0968444}
+2017-10-28 02:59:00,099 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:59:00,111 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:59:00,111 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130740.0977027}
+2017-10-28 02:59:15,103 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:59:15,130 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:59:15,132 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130755.0985606}
+2017-10-28 02:59:30,104 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:59:30,127 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 63
+2017-10-28 02:59:30,129 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130770.0994186}
+2017-10-28 02:59:44,907 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:59:44,930 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/resource/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 152
+2017-10-28 02:59:44,932 - plugins.ens - DEBUG:success send log[resource]:{'time': 1509130784.9022653, 'cpu': 6.7, 'mem': 68.0}
+2017-10-28 02:59:44,937 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:59:44,954 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/client/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 510
+2017-10-28 02:59:44,955 - plugins.ens - DEBUG:success send log[client]:{'time': 1509130784.9112659, 'ip': '192.168.1.111', 'mac': 'ec:0e:c4:3e:e3:ea', 'hostname': 'A000823-NC', 'pid': 3996, 'platform': 'Windows-7-6.1.7601-SP1', 'arch': '64bit', 'cpu': 8, 'mem': 8296923136}
+2017-10-28 02:59:45,101 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 02:59:45,110 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 02:59:45,111 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130785.1002765}
+2017-10-28 03:00:00,105 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:00:00,127 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 64
+2017-10-28 03:00:00,129 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130800.1011345}
+2017-10-28 03:00:15,106 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:00:15,128 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 64
+2017-10-28 03:00:15,129 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130815.1019926}
+2017-10-28 03:00:30,104 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:00:30,116 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 03:00:30,117 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130830.1028507}
+2017-10-28 03:00:44,904 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:00:44,920 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/resource/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 152
+2017-10-28 03:00:44,921 - plugins.ens - DEBUG:success send log[resource]:{'time': 1509130844.9026973, 'cpu': 7.1, 'mem': 65.7}
+2017-10-28 03:00:44,924 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:00:44,937 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/client/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 510
+2017-10-28 03:00:44,938 - plugins.ens - DEBUG:success send log[client]:{'time': 1509130844.9126976, 'ip': '192.168.1.111', 'mac': 'ec:0e:c4:3e:e3:ea', 'hostname': 'A000823-NC', 'pid': 3996, 'platform': 'Windows-7-6.1.7601-SP1', 'arch': '64bit', 'cpu': 8, 'mem': 8296923136}
+2017-10-28 03:00:45,107 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:00:45,128 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 03:00:45,129 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130845.1037087}
+2017-10-28 03:01:00,109 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:01:00,136 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 03:01:00,138 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130860.1045666}
+2017-10-28 03:01:15,109 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:01:15,135 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 03:01:15,136 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130875.1054246}
+2017-10-28 03:01:30,110 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:01:30,132 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 64
+2017-10-28 03:01:30,133 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130890.1062825}
+2017-10-28 03:01:44,908 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:01:44,926 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/resource/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 152
+2017-10-28 03:01:44,928 - plugins.ens - DEBUG:success send log[resource]:{'time': 1509130904.9031289, 'cpu': 7.0, 'mem': 65.8}
+2017-10-28 03:01:44,933 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:01:44,955 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/client/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 510
+2017-10-28 03:01:44,957 - plugins.ens - DEBUG:success send log[client]:{'time': 1509130904.9141297, 'ip': '192.168.1.111', 'mac': 'ec:0e:c4:3e:e3:ea', 'hostname': 'A000823-NC', 'pid': 3996, 'platform': 'Windows-7-6.1.7601-SP1', 'arch': '64bit', 'cpu': 8, 'mem': 8296923136}
+2017-10-28 03:01:45,111 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:01:45,133 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 64
+2017-10-28 03:01:45,135 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130905.1071405}
+2017-10-28 03:02:00,111 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:02:00,135 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 61
+2017-10-28 03:02:00,136 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130920.1079986}
+2017-10-28 03:02:15,113 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:02:15,134 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 64
+2017-10-28 03:02:15,135 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130935.1088567}
+2017-10-28 03:02:30,112 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:02:30,128 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 03:02:30,129 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130950.1097147}
+2017-10-28 03:02:44,905 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:02:44,912 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/resource/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 152
+2017-10-28 03:02:44,913 - plugins.ens - DEBUG:success send log[resource]:{'time': 1509130964.9035606, 'cpu': 9.8, 'mem': 67.3}
+2017-10-28 03:02:44,918 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:02:44,926 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/client/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 510
+2017-10-28 03:02:44,926 - plugins.ens - DEBUG:success send log[client]:{'time': 1509130964.9165614, 'ip': '192.168.1.111', 'mac': 'ec:0e:c4:3e:e3:ea', 'hostname': 'A000823-NC', 'pid': 3996, 'platform': 'Windows-7-6.1.7601-SP1', 'arch': '64bit', 'cpu': 8, 'mem': 8296923136}
+2017-10-28 03:02:45,114 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:02:45,135 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 03:02:45,137 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130965.1105726}
+2017-10-28 03:03:00,112 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:03:00,121 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 03:03:00,122 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130980.1114306}
+2017-10-28 03:03:15,116 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:03:15,143 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 03:03:15,145 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509130995.1122885}
+2017-10-28 03:03:30,117 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:03:30,140 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 64
+2017-10-28 03:03:30,142 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509131010.1131465}
+2017-10-28 03:03:44,908 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:03:44,923 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/resource/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 153
+2017-10-28 03:03:44,924 - plugins.ens - DEBUG:success send log[resource]:{'time': 1509131024.9039927, 'cpu': 10.7, 'mem': 68.5}
+2017-10-28 03:03:44,926 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:03:44,936 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/client/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 510
+2017-10-28 03:03:44,936 - plugins.ens - DEBUG:success send log[client]:{'time': 1509131024.9169934, 'ip': '192.168.1.111', 'mac': 'ec:0e:c4:3e:e3:ea', 'hostname': 'A000823-NC', 'pid': 3996, 'platform': 'Windows-7-6.1.7601-SP1', 'arch': '64bit', 'cpu': 8, 'mem': 8296923136}
+2017-10-28 03:03:45,115 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:03:45,127 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 03:03:45,128 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509131025.1140044}
+2017-10-28 03:04:00,118 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:04:00,332 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 64
+2017-10-28 03:04:00,334 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509131040.1148627}
+2017-10-28 03:04:15,120 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:04:15,141 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 64
+2017-10-28 03:04:15,143 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509131055.1157207}
+2017-10-28 03:04:30,121 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:04:30,137 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 03:04:30,138 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509131070.1165786}
+2017-10-28 03:04:44,909 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:04:44,931 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/resource/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 152
+2017-10-28 03:04:44,933 - plugins.ens - DEBUG:success send log[resource]:{'time': 1509131084.9044244, 'cpu': 7.2, 'mem': 68.6}
+2017-10-28 03:04:44,938 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:04:44,961 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/client/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 509
+2017-10-28 03:04:44,962 - plugins.ens - DEBUG:success send log[client]:{'time': 1509131084.918425, 'ip': '192.168.1.111', 'mac': 'ec:0e:c4:3e:e3:ea', 'hostname': 'A000823-NC', 'pid': 3996, 'platform': 'Windows-7-6.1.7601-SP1', 'arch': '64bit', 'cpu': 8, 'mem': 8296923136}
+2017-10-28 03:04:45,121 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:04:45,142 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 64
+2017-10-28 03:04:45,144 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509131085.1174366}
+2017-10-28 03:05:00,122 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:05:00,144 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 64
+2017-10-28 03:05:00,146 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509131100.1182945}
+2017-10-28 03:05:15,123 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:05:15,146 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 64
+2017-10-28 03:05:15,148 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509131115.1191525}
+2017-10-28 03:05:30,125 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:05:30,147 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 64
+2017-10-28 03:05:30,149 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509131130.1200106}
+2017-10-28 03:05:44,906 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:05:44,917 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/resource/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 152
+2017-10-28 03:05:44,917 - plugins.ens - DEBUG:success send log[resource]:{'time': 1509131144.9048562, 'cpu': 4.6, 'mem': 68.6}
+2017-10-28 03:05:44,920 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:05:44,929 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/client/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 510
+2017-10-28 03:05:44,930 - plugins.ens - DEBUG:success send log[client]:{'time': 1509131144.9198573, 'ip': '192.168.1.111', 'mac': 'ec:0e:c4:3e:e3:ea', 'hostname': 'A000823-NC', 'pid': 3996, 'platform': 'Windows-7-6.1.7601-SP1', 'arch': '64bit', 'cpu': 8, 'mem': 8296923136}
+2017-10-28 03:05:45,124 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:05:45,165 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 03:05:45,166 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509131145.1208687}
+2017-10-28 03:06:00,125 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:06:00,148 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 03:06:00,150 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509131160.1217268}
+2017-10-28 03:06:15,126 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:06:15,152 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 03:06:15,154 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509131175.1225846}
+2017-10-28 03:06:30,124 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:06:30,133 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 03:06:30,133 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509131190.1234426}
+2017-10-28 03:06:44,910 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:06:44,933 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/resource/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 152
+2017-10-28 03:06:44,934 - plugins.ens - DEBUG:success send log[resource]:{'time': 1509131204.9052882, 'cpu': 6.9, 'mem': 68.3}
+2017-10-28 03:06:44,939 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:06:44,959 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/client/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 509
+2017-10-28 03:06:44,960 - plugins.ens - DEBUG:success send log[client]:{'time': 1509131204.920289, 'ip': '192.168.1.111', 'mac': 'ec:0e:c4:3e:e3:ea', 'hostname': 'A000823-NC', 'pid': 3996, 'platform': 'Windows-7-6.1.7601-SP1', 'arch': '64bit', 'cpu': 8, 'mem': 8296923136}
+2017-10-28 03:06:45,128 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:06:45,151 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 64
+2017-10-28 03:06:45,153 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509131205.1243005}
+2017-10-28 03:07:00,129 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:07:00,151 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 63
+2017-10-28 03:07:00,153 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509131220.1251585}
+2017-10-28 03:07:15,127 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:07:15,183 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 63
+2017-10-28 03:07:15,183 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509131235.1260166}
+2017-10-28 03:07:30,130 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:07:30,153 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 03:07:30,155 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509131250.1268747}
+2017-10-28 03:07:44,910 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:07:44,928 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/resource/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 152
+2017-10-28 03:07:44,930 - plugins.ens - DEBUG:success send log[resource]:{'time': 1509131264.9057198, 'cpu': 9.7, 'mem': 66.5}
+2017-10-28 03:07:44,934 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:07:44,952 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/client/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 509
+2017-10-28 03:07:44,953 - plugins.ens - DEBUG:success send log[client]:{'time': 1509131264.922721, 'ip': '192.168.1.111', 'mac': 'ec:0e:c4:3e:e3:ea', 'hostname': 'A000823-NC', 'pid': 3996, 'platform': 'Windows-7-6.1.7601-SP1', 'arch': '64bit', 'cpu': 8, 'mem': 8296923136}
+2017-10-28 03:07:45,132 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:07:45,155 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 03:07:45,157 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509131265.1277325}
+2017-10-28 03:08:00,133 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:08:00,159 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 03:08:00,160 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509131280.1285906}
+2017-10-28 03:08:15,133 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:08:15,154 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 03:08:15,156 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509131295.1294487}
+2017-10-28 03:08:30,132 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:08:30,145 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 03:08:30,146 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509131310.1303065}
+2017-10-28 03:08:44,911 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:08:44,935 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/resource/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 152
+2017-10-28 03:08:44,936 - plugins.ens - DEBUG:success send log[resource]:{'time': 1509131324.9061518, 'cpu': 8.6, 'mem': 68.7}
+2017-10-28 03:08:44,941 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:08:44,964 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/client/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 510
+2017-10-28 03:08:44,966 - plugins.ens - DEBUG:success send log[client]:{'time': 1509131324.9241529, 'ip': '192.168.1.111', 'mac': 'ec:0e:c4:3e:e3:ea', 'hostname': 'A000823-NC', 'pid': 3996, 'platform': 'Windows-7-6.1.7601-SP1', 'arch': '64bit', 'cpu': 8, 'mem': 8296923136}
+2017-10-28 03:08:45,132 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:08:45,141 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 64
+2017-10-28 03:08:45,142 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509131325.1311648}
+2017-10-28 03:09:00,137 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:09:00,159 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 64
+2017-10-28 03:09:00,160 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509131340.1320226}
+2017-10-28 03:09:15,133 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:09:15,141 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 64
+2017-10-28 03:09:15,142 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509131355.1328807}
+2017-10-28 03:09:30,137 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:09:30,159 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 63
+2017-10-28 03:09:30,160 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509131370.1337385}
+2017-10-28 03:09:44,911 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:09:44,933 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/resource/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 152
+2017-10-28 03:09:44,935 - plugins.ens - DEBUG:success send log[resource]:{'time': 1509131384.9065835, 'cpu': 8.9, 'mem': 69.7}
+2017-10-28 03:09:44,940 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:09:44,963 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/client/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 510
+2017-10-28 03:09:44,965 - plugins.ens - DEBUG:success send log[client]:{'time': 1509131384.9265845, 'ip': '192.168.1.111', 'mac': 'ec:0e:c4:3e:e3:ea', 'hostname': 'A000823-NC', 'pid': 3996, 'platform': 'Windows-7-6.1.7601-SP1', 'arch': '64bit', 'cpu': 8, 'mem': 8296923136}
+2017-10-28 03:09:45,138 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:09:45,159 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 64
+2017-10-28 03:09:45,161 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509131385.1345966}
+2017-10-28 03:10:00,139 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:10:00,162 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 64
+2017-10-28 03:10:00,164 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509131400.1354547}
+2017-10-28 03:10:15,141 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:10:15,166 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 03:10:15,168 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509131415.1363125}
+2017-10-28 03:10:30,141 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:10:30,162 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 64
+2017-10-28 03:10:30,164 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509131430.1371708}
+2017-10-28 03:10:44,908 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:10:44,915 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/resource/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 152
+2017-10-28 03:10:44,916 - plugins.ens - DEBUG:success send log[resource]:{'time': 1509131444.9070153, 'cpu': 8.7, 'mem': 69.6}
+2017-10-28 03:10:44,930 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:10:44,939 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/client/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 510
+2017-10-28 03:10:44,940 - plugins.ens - DEBUG:success send log[client]:{'time': 1509131444.9280167, 'ip': '192.168.1.111', 'mac': 'ec:0e:c4:3e:e3:ea', 'hostname': 'A000823-NC', 'pid': 3996, 'platform': 'Windows-7-6.1.7601-SP1', 'arch': '64bit', 'cpu': 8, 'mem': 8296923136}
+2017-10-28 03:10:45,139 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:10:45,146 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 64
+2017-10-28 03:10:45,147 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509131445.1380286}
+2017-10-28 03:11:00,143 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:11:00,165 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 03:11:00,167 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509131460.1388867}
+2017-10-28 03:11:15,141 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:11:15,155 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 03:11:15,156 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509131475.1397445}
+2017-10-28 03:11:30,145 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:11:30,167 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 64
+2017-10-28 03:11:30,169 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509131490.1406026}
+2017-10-28 03:11:44,912 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:11:44,940 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/resource/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 152
+2017-10-28 03:11:44,943 - plugins.ens - DEBUG:success send log[resource]:{'time': 1509131504.9074125, 'cpu': 9.0, 'mem': 66.7}
+2017-10-28 03:11:44,947 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:11:44,964 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/client/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 510
+2017-10-28 03:11:44,966 - plugins.ens - DEBUG:success send log[client]:{'time': 1509131504.9284136, 'ip': '192.168.1.111', 'mac': 'ec:0e:c4:3e:e3:ea', 'hostname': 'A000823-NC', 'pid': 3996, 'platform': 'Windows-7-6.1.7601-SP1', 'arch': '64bit', 'cpu': 8, 'mem': 8296923136}
+2017-10-28 03:11:45,145 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:11:45,160 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 65
+2017-10-28 03:11:45,160 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509131505.1430209}
+2017-10-28 03:12:00,146 - urllib3.connectionpool - DEBUG:Starting new HTTP connection (1): 127.0.0.1
+2017-10-28 03:12:00,228 - urllib3.connectionpool - DEBUG:http://127.0.0.1:8090 "POST /api/v1/heartbeat/3ce3c208bac411e7828aec0ec43ee3ea/ HTTP/1.1" 200 64
+2017-10-28 03:12:00,229 - plugins.ens - DEBUG:success send log[heartbeat]:{'time': 1509131520.1432612}

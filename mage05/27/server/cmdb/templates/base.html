@@ -1,0 +1,62 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}CMDB{% endblock %}</title>
+        <link rel="stylesheet" style="text/css" href="{% static 'bootstrap-3.3.7/css/bootstrap.min.css' %}" />
+        {% block link %}{% endblock %}
+        <style>
+            body {
+                padding-top: 70px;
+            }
+            .wrap {
+                position:fixed;
+                top: 50px;
+                bottom: 25px;
+                overflow-y: auto;
+                overflow-x: hidden;
+                padding: 10px 10px 0px 10px; 
+            }
+            {% block style %}{% endblock %}
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="javascript:void(0);">CMDB</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="javascript:void(0);">资产管理 <span class="sr-only">(current)</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 wrap">
+                    {% block container %}{% endblock %}
+                </div>
+            </div>
+        </div>
+        {% block dialog %}{% endblock %}
+        <script type="text/javascript" src="{% static 'jquery/jquery-1.12.4.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'bootstrap-3.3.7/js/bootstrap.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'echarts/echarts.common.min.js' %}"></script>
+        {% block script %}{% endblock %}
+        <script type="text/javascript">
+            {% block js %}{% endblock %}
+        </script>
+    </body>
+</html>

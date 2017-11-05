@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% load static %}
+
+{% get_media_prefix as media_prefix %}
+
+{% block style %}
+<style type="text/css">
+.nav-tabs {
+    margin-bottom: 15px;
+}
+</style>
+{% endblock %}
+{% block container %}
+
+<div data-example-id="togglable-tabs">
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" {% if nav == 'base' %} class="active" {% endif %}>
+            <a href="#user_ext_base" id="user_ext_base_tab" role="tab" data-toggle="tab" aria-controls="user_ext_base_tab" aria-expanded="false">基本1{{media_prefix}}1信息</a>
+        </li>
+        <li role="presentation" {% if nav == 'avatar' %} class="active" {% endif %}>
+            <a href="#user_ext_avatar" role="tab" id="user_ext_avatar_tab" data-toggle="tab" aria-controls="user_ext_avatar" aria-expanded="true">头像</a>
+        </li>
+    </ul>
+    <div class="tab-content">
+         <div role="tabpanel" class="tab-pane fade {% if nav == 'base' %} active in {% endif %}" id="user_ext_base" aria-labelledby="user_ext_base_tab">
+            <form action="{% url 'account:user_ext_base' %}" method="POST" novalidate="novalidate">
+                {% csrf_token %}
+                <table>
+                    {{ form.as_table }}
+                </table>
+                <input type="submit" value="修改" />
+            </form>
+        </div>
+        <div role="tabpanel" class="tab-pane fade {% if nav == 'avatar' %} active in {% endif %}" id="user_ext_avatar" aria-labelledby="user_ext_avatar_tab">
+            <form action="{% url 'account:user_ext_avatar' %}" method="POST" novalidate="novalidate" enctype="multipart/form-data">
+                {% csrf_token %}
+                <table>
+                    <tr>
+                        <td></td>
+                        <td><img class="img-thumbnail" style="width:200px; height: 200px;" src="{% get_media_prefix %}/avatar/{{request.user.userext.avatar}}" /></td>
+                    </tr>
+                    {{ form_avatar.as_table }}
+                </table>
+                <input type="submit" value="修改" />
+            </form>
+        </div>
+       
+    </div>
+</div>
+{% endblock %}

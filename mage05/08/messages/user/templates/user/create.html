@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>用户添加</title>
+    </head>
+    <body>
+        <h1>用户添加</h1>
+        {{ error }}
+        <form action="/user/save_user/" method="POST">
+            {% csrf_token %}
+            <label>用户名:</label><input type="text" name="username" value="{{ username }}"/><br/><br/>
+            <label>密码:</label><input type="password" name="password" value="{{ password }}"/><br/><br/>
+            <label>电话号码:</label><input type="text" name="tel" value="{{ tel }}"/><br/><br/>
+            <label>年龄:</label><input type="text" name="age" value="{{ age }}"/><br/><br/>
+            <input type="submit" value="添加"/><br/><br/>
+        </form>
+    </body>
+</html>

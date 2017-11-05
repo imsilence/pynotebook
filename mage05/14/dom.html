@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>js学习</title>
+    </head>
+    <body>
+        <div id="mydiv">
+
+        </div>
+        <input type="text" id="myinput" value="1"/>
+        <select id="myselect">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4" selected>4</option>
+        </select>
+        <div class="myclassdiv"></div>
+        <div class="myclassdiv"></div>
+        <script type="text/javascript">
+            var mydiv = document.getElementById("mydiv");
+            var mydiv1 = document.getElementById("mydiv1");
+
+            console.log(mydiv);
+            console.log(mydiv1)
+
+            console.log(document.getElementsByTagName("div").length);
+            console.log(document.getElementsByTagName("span").length);
+
+            console.log(document.getElementsByClassName("myclassdiv").length);
+            console.log(document.getElementsByClassName("myclassspan").length);
+
+            //在 id=mydiv 创建一个div 内容 my name is kk;显示内容为红色  style color
+
+            var innerDiv = document.createElement("div");
+            console.log(innerDiv.innerHTML);
+            innerDiv.innerHTML = 'my name is kk';
+            console.log(innerDiv.innerHTML);
+            innerDiv.style.color = 'red';
+            innerDiv.id = "myinnerdiv";
+            mydiv.appendChild(innerDiv);
+
+            function alertMe() {
+                console.log(new Date());
+            }
+
+            var alertMe1 = function() {
+                console.log('alertMe1');
+                console.log(new Date());
+            }
+
+            mydiv.onclick = alertMe;
+            console.log(document.getElementById('myinput').value)
+            console.log(document.getElementById("myselect").value)
+
+            //间隔30s时间以后删除
+            //parent.removeChild(child)
+            setTimeout(function() {
+                mydiv.removeChild(innerDiv);
+                document.getElementById('myinput').value = 1000;
+                document.getElementById("myselect").value = 2;
+            }, 10 * 1000); //时间单位是毫秒
+            //
+        </script>
+    </body>
+</html>

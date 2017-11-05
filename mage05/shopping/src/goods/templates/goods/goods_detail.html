@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% load staticfiles%}
+
+{% block links %}
+    <link rel="stylesheet" type="text/css" href="{% static 'goods/detail.css' %}" />
+{% endblock %}
+
+{% block container %}
+<div class="row">
+	<div class="col-xs-12">
+		<div class="row product-detail">
+			<div class="col-xs-12">
+				<h2>{{ object.name }}</h2>
+			</div>
+		</div>
+		<div class="row">
+			<div class= "col-xs-3">
+				<img id="big_img" alt="" src="{{ object.img.url }}" class="img-responsive">
+			</div>
+			<div class= "col-xs-5">
+				<div class="row">
+					<div class="col-xs-7">
+                        {% for ext in object.goodsext_set.all %}
+						    <strong>{{ ext.key }}:</strong>
+						    <span>{{ ext.value }}</span>
+					     	<br/>
+						{% endfor %}
+					</div>
+					<div class="col-xs-5">
+						<span class="label label-warning price"> ¥ {{ object.price }}</span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-7">
+						<br/>
+						<h3>描述</h3>
+						<p>{{ object.desc }}</p>
+						<hr/>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-3">
+						<a href="javascript:history.back(-1);" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> Back</a>
+					</div>
+					<div class="col-xs-7">
+						<form class="form-horizontal">
+							<div class="form-group">
+								<label class="col-xs-5 control-label">数量</label>
+								<div class="col-xs-7">
+									<select class="form-control" id="goods_num">
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="5">5</option>
+									</select>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="col-xs-2">
+						<a href="javascript:void(0);" class="btn btn-primary btn-add-car" data-goods="{{ object.pk }}"><i class="glyphicon glyphicon-shopping-cart"></i> 加入购物车</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block js %}
+jQuery(document).ready(function() {
+	jQuery('.btn-add-car').on('click', function() {
+		var params = {
+			'csrfmiddlewaretoken' : '{{ csrf_token }}',
+			'num' : jQuery('#goods_num').val(),
+			'goods' : jQuery(this).data('goods'),
+		};
+		ajax("{% url 'goods:add_shopping_car' %}", params, function(data) {
+			swal('成功加入购物车');
+			refresh_shopping_car();
+		});
+	})
+});
+{% endblock %}

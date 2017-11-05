@@ -1,0 +1,362 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>{% block title %}KK的商城{% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/sticky-footer.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/navbar.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'sweetalert/dist/sweetalert.css' %}"/>
+        {% block links %}{% endblock %}
+        {% block style %}{% endblock %}
+	</head>
+<body>
+	<div id="wrap">
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="/">KK的商城</a>
+				</div>
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="#">Diamonds</a></li>
+						<li><a href="#">Engagement Rings</a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Wedding<b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Action</a></li>
+								<li><a href="#">Another action</a></li>
+								<li><a href="#">Something else here</a></li>
+								<li class="divider"></li>
+								<li><a href="#">Separated link</a></li>
+								<li class="divider"></li>
+								<li><a href="#">One more separated link</a></li>
+							</ul>
+						</li>
+					</ul>
+					<form class="navbar-form navbar-left" role="search">
+						<div class="form-group">
+						<input type="text" class="form-control" placeholder="Search">
+						</div>
+						<button type="submit" class="btn btn-default">Submit</button>
+					</form>
+					<ul class="nav navbar-nav navbar-right">
+						{% if request.user.is_authenticated and not request.user.is_staff %}
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+								{{ request.user.userext.nickname_text }}
+								<b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a href="{% url 'account:user_ext_base' %}">用户信息</a></li>
+								<li><a href="{% url 'account:user_addresses' %}">收获地址</a></li>
+								<li class="divider"></li>
+								<li><a data-toggle="modal" data-target="#dialog_password" data-backdrop="static">修改密码</a></li>
+								<li class="divider"></li>
+								<li><a href="{% url 'account:logout' %}">退出</a></li>
+							</ul>
+						</li>
+						{% else %}
+							<li><a data-toggle="modal" data-target="#dialog_login" data-backdrop="static">登录</a></li>
+							<li><a data-toggle="modal" data-target="#dialog_register" data-backdrop="static">注册</a></li>
+						{% endif %}
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="container">
+			{% block container %}{% endblock %}
+		</div>
+	</div>
+	<div id="footer">
+		<div class="container">
+			<p class="text-muted credit" align="center">©Copyright 2013 Bootply | All rights reserved. </p>
+		</div>
+	</div>
+	<div class="modal" id="dialog_login">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4>用户登录</h4>
+				</div>
+				<div class="modal-body">
+					<form class="form-horizontal" role="form" method="post" id="form_login">
+						{% csrf_token %}
+						<div class="form-group">
+							<label for="username" class="col-xs-4 control-label">用户名/邮箱</label>
+							<div class="col-xs-6">
+								<input type="text" class="form-control" name="username" id="username" placeholder="用户名/邮箱" value="">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="password" class="col-xs-4 control-label">密码</label>
+							<div class="col-xs-6">
+								<input type="password" class="form-control" name="password" id="password" placeholder="密码" value="">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-xs-offset-4 col-xs-10">
+								<button type="button" class="btn btn-primary" id="btn_login">登录</button>
+								<button type="button" class="btn btn-link" id="btn_reset_password">忘记密码</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal" id="dialog_register">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4>用户注册</h4>
+				</div>
+				<div class="modal-body">
+					<form class="form-horizontal" role="form" method="post" id="form_register">
+						{% csrf_token %}
+						<div class="form-group">
+							<label for="username" class="col-xs-4 control-label">用户名</label>
+							<div class="col-xs-6">
+								<input type="text" class="form-control" name="username" id="username" placeholder="用户名" value="">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="email" class="col-xs-4 control-label">邮箱</label>
+							<div class="col-xs-6">
+								<input type="text" class="form-control" name="email" id="email" placeholder="邮箱" value="">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="password" class="col-xs-4 control-label">密码</label>
+							<div class="col-xs-6">
+								<input type="password" class="form-control" name="password" id="password" placeholder="密码" value="">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="password2" class="col-xs-4 control-label">确认密码</label>
+							<div class="col-xs-6">
+								<input type="password" class="form-control" name="password2" id="password2" placeholder="确认密码" value="">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="col-xs-offset-4 col-xs-10">
+								<button type="button" class="btn btn-primary" id="btn_register">注册</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal" id="dialog_password">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4>修改密码</h4>
+				</div>
+				<div class="modal-body">
+					<form class="form-horizontal" role="form" method="post" id="form_password">
+						{% csrf_token %}
+						<div class="form-group">
+							<label for="old_password" class="col-xs-4 control-label">原密码</label>
+							<div class="col-xs-6">
+								<input type="password" class="form-control" name="old_password" id="old_password" placeholder="原密码" value="">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="password" class="col-xs-4 control-label">新密码</label>
+							<div class="col-xs-6">
+								<input type="password" class="form-control" name="password" id="password" placeholder="密码" value="">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="password2" class="col-xs-4 control-label">确认密码</label>
+							<div class="col-xs-6">
+								<input type="password" class="form-control" name="password2" id="password2" placeholder="确认密码" value="">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-xs-offset-4 col-xs-10">
+								<button type="button" class="btn btn-primary" id="btn_password">确定</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+    {% block dialog %}{% endblock %}
+	<script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+	<script type="text/javascript" src="{% static 'sweetalert/dist/sweetalert.min.js' %}"></script>
+    {% block script %}{% endblock %}
+	<script type="text/javascript">
+		jQuery(document).ready(function() {
+			jQuery('#btn_register').on('click', function() {
+				var params = jQuery('#form_register').serializeArray();
+				jQuery.post("{% url 'account:register' %}", params, function(data) {
+					if(data['status'] == 200) {
+						jQuery('#dialog_register').modal('hide');
+						swal({
+							title: "注册成功",
+							text: "请查收邮箱进行用户激活",
+							type: "success",
+							confirmButtonText: "确定"
+						});
+					} else if(data['status'] == 400) {
+						var errors = [];
+						jQuery.each(data['errors'], function(key, value) {
+							errors.push(value[0]['message']);
+						});
+						swal({
+							title: "验证失败",
+							text: errors.join('\n'),
+							type: "error",
+							confirmButtonColor: "#DD6B55",
+							confirmButtonText: "确定"
+						});
+					} else if(data['status'] == 401) {
+						var errors = data['errors'] || [];
+						swal({
+							title: "用户未登录",
+							text: errors.join('\n'),
+							type: "error",
+							confirmButtonColor: "#DD6B55",
+							confirmButtonText: "确定"
+						});
+					} else if (data['status'] == 500) {
+						var errors = data['errors'] || [];
+						swal({
+							title: "服务器错误",
+							text: errors.join('\n'),
+							type: "error",
+							confirmButtonColor: "#DD6B55",
+							confirmButtonText: "确定"
+						});
+					} else {
+
+					}
+				}, 'json')
+			});
+
+			jQuery('#btn_login').on('click', function() {
+				var params = jQuery('#form_login').serializeArray();
+				jQuery.post("{% url 'account:login' %}", params, function(data) {
+					if(data['status'] == 200) {
+						jQuery('#dialog_login').modal('hide');
+						window.location.replace('/');
+						// swal({
+						// 	title: "登录成功",
+						// 	text: "",
+						// 	type: "success",
+						// 	confirmButtonText: "确定"
+						// });
+					} else if(data['status'] == 400) {
+						var errors = [];
+						jQuery.each(data['errors'], function(key, value) {
+							errors.push(value[0]['message']);
+						});
+						swal({
+							title: "验证失败",
+							text: errors.join('\n'),
+							type: "error",
+							confirmButtonColor: "#DD6B55",
+							confirmButtonText: "确定"
+						});
+					} else if(data['status'] == 401) {
+						var errors = data['errors'] || [];
+						swal({
+							title: "用户未登录",
+							text: errors.join('\n'),
+							type: "error",
+							confirmButtonColor: "#DD6B55",
+							confirmButtonText: "确定"
+						});
+					} else if (data['status'] == 500) {
+						var errors = data['errors'] || [];
+						swal({
+							title: "服务器错误",
+							text: errors.join('\n'),
+							type: "error",
+							confirmButtonColor: "#DD6B55",
+							confirmButtonText: "确定"
+						});
+					} else {
+
+					}
+				}, 'json');
+			});
+
+			jQuery('#btn_reset_password').on('click', function() {
+				window.location.replace("{% url 'account:reset_password' %}");
+			});
+
+			jQuery('#btn_password').on('click', function() {
+				var params = jQuery('#form_password').serializeArray();
+				jQuery.post("{% url 'account:change_password' %}", params, function(data) {
+					if(data['status'] == 200) {
+						jQuery('#dialog_password').modal('hide');
+						swal({
+							title: "修改密码成功, 请重新登陆",
+							text: "",
+							type: "success",
+							confirmButtonText: "确定",
+							closeOnConfirm: false,
+						}, function() {
+							swal.close();
+							window.location.replace(window.location.href)
+						});
+					} else if(data['status'] == 400) {
+						var errors = [];
+						jQuery.each(data['errors'], function(key, value) {
+							errors.push(value[0]['message']);
+						});
+						swal({
+							title: "验证失败",
+							text: errors.join('\n'),
+							type: "error",
+							confirmButtonColor: "#DD6B55",
+							confirmButtonText: "确定"
+						});
+					} else if(data['status'] == 401) {
+						var errors = data['errors'] || [];
+						swal({
+							title: "用户未登录",
+							text: errors.join('\n'),
+							type: "error",
+							confirmButtonColor: "#DD6B55",
+							confirmButtonText: "确定"
+						});
+					} else if (data['status'] == 500) {
+						var errors = data['errors'] || [];
+						swal({
+							title: "服务器错误",
+							text: errors.join('\n'),
+							type: "error",
+							confirmButtonColor: "#DD6B55",
+							confirmButtonText: "确定"
+						});
+					} else {
+
+					}
+				}, 'json')
+			});
+
+		});
+        {% block js %}{% endblock %}
+	</script>
+</body>
+</html>

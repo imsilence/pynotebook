@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}留言板{% endblock %}
+{% block nav_online %}class="active"{% endblock %}
+{% block content %}
+<!-- 我是注释 -->
+<h3>留言</h3> <!--h1-> h6-->
+<!--method: POST /GET -->
+<form action="/online/save/" method="POST" novalidate="novalidate">
+    <!--
+    <label>用户名:</label> <input type="text" name="username"/> <br /><br />
+    <label>标题:</label> <input type="text" name="title"/><br /><br />
+    <label>内容:</label> <input type="text" name="content"/><br /><br />
+    -->
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+    <input type="submit" value="留言"/>
+</form>
+{% endblock %}

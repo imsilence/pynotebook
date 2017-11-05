@@ -1,0 +1,210 @@
+{% extends "base.html" %}
+
+{% block container %}
+<div class="row">
+    <form class="form-inline" role="form" action="{% url 'goods:order' %}" method="POST" id="form_order">
+        {% csrf_token %}
+        <ul class="nav nav-tabs" style="margin-bottom:8px;">
+            <li class="active"><a href="#step1" data-current="1" >购物车</a></li>
+            <li><a href="#step2" data-current="2" >收获信息</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="step1">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th colspan="2">商品</th>
+                                    <th>单价</th>
+                                    <th>数量</th>
+                                    <th>小计</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for car in shopping_cars %}
+                                    <tr class="car car-{{car.pk}}" data-car="{{ car.pk }}">
+                                        <td class="col-xs-1">
+                                            <input type="checkbox" checked="checked" name="car" value="{{ car.pk }}"/>
+                                        </td>
+                                        <td class="col-xs-1">
+                                            <img src="{{ car.goods.img.url }}" style="height:70px; width:70px" />
+                                        </td>
+                                        <td class="col-xs-4">
+                                            <a href="{% url 'goods:detail' car.goods.pk %}">{{ car.goods.name }}</a/>
+                                        </td>
+                                        <td class="col-xs-1">
+                                            ¥ <span class="price-{{ car.pk }}" data-price="{{ car.goods.price }}">{{ car.goods.price|floatformat:2 }}</span>
+                                        </td>
+                                        <td class="col-xs-3">
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <div class="form-group">
+                                                        <button type="button" class="btn btn-default btn-car-minus" data-car="{{ car.pk }}" >-</button>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="text" data-car="{{ car.pk }}" value="{{ car.num }}" class="form-control"/>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <button type="button" class="btn btn-default btn-car-plus" data-car="{{ car.pk }}">+</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="col-xs-1">
+                                            ¥ <span class="price-total-{{ car.pk }}"></span>
+                                        </td>
+                                        <td class="col-xs-1">
+                                            <button type="button" class="btn btn-car-clear" title="delete" data-car="{{ car.pk }}"><i class="glyphicon glyphicon-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="step2">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>收货人</th>
+                                    <th>收获地址</th>
+                                    <th>联系方式</th>
+                                    <th>固定电话</th>
+                                    <th>电子邮箱</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for object in user_address %}
+                                    <tr>
+                                        <td><input type="radio" name="user_address" {% if forloop.first %} checked="checked" {% endif %} value="{{ object.pk }}"/></td>
+                                        <td>{{ object.name }}</td>
+                                        <td>{{ object.site }}</td>
+                                        <td>{{ object.telephone }}</td>
+                                        <td>{{ object.fixedphone }}</td>
+                                        <td>{{ object.email }}</td>
+                                    </tr>
+                                {% empty %}
+                                    <tr>
+                                        <td colspan="6">暂无数据</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+<div class="row">
+    <div class="col-xs-4">
+        <a href="{% url 'goods:list' %}" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> 继续购物 </a>
+    </div>
+    <div class="col-xs-4">
+        <button class="btn btn-car-clear-all"><i class="glyphicon glyphicon-trash"></i> 清空购物车 </button>
+    </div>
+    <div class="col-xs-4">
+        <button type="button" class="btn btn-primary pull-right btn-next" data-current="1">下一步 <i class="glyphicon glyphicon-chevron-right"></i></button>
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+jQuery(document).ready(function() {
+
+    jQuery('tr.car').each(function() {
+        var car  = jQuery(this).data('car');
+        var num = parseInt(jQuery(this).find('input[type=text][data-car=' + car + ']').val());
+        var price = parseFloat(jQuery(this).find('span.price-' + car).data('price'));
+        jQuery(this).find('span.price-total-'+ car).text(new Number(num * price).toFixed(2));
+    });
+
+    function change_car_num(car, num) {
+        num = parseInt(num, 10)
+        if(!isNaN(num) && num > 0) {
+            var params = {
+                'csrfmiddlewaretoken' : '{{ csrf_token }}',
+                'car' : car,
+                'num' : num
+            };
+            ajax("{% url 'goods:update_shopping_car' %}", params, function(data) {
+                jQuery('input[type=text][data-car=' + car + ']').val(num);
+
+                jQuery('span.price-total-'+ car).text(new Number(num * parseFloat(jQuery('span.price-'+ car).data('price'))).toFixed(2));
+                refresh_shopping_car();
+            });
+        }
+    }
+    
+    jQuery('button.btn-car-plus').on('click', function() {
+        var car = jQuery(this).data('car');
+        var cnum = parseInt(jQuery('[type=text][data-car=' + car + ']').val(), 10);
+        change_car_num(car, cnum + 1);
+    });
+    jQuery('button.btn-car-minus').on('click', function() {
+        var car = jQuery(this).data('car');
+        var cnum = parseInt(jQuery('[type=text][data-car=' + car + ']').val(), 10);
+        change_car_num(car, cnum - 1);
+    });
+    jQuery('input[type=text][data-car]').on('change', function() {
+        var car = jQuery(this).data('car');
+        var cnum = jQuery(this).val();
+        change_car_num(car, cnum);
+    });
+
+    function clear_car(car) {
+        var params = {
+            'car': car,
+            'csrfmiddlewaretoken' : '{{ csrf_token }}'
+        }
+        ajax("{% url 'goods:remove_shopping_car' %}", params, function() {
+            jQuery('tr.car-' + car).remove();
+            refresh_shopping_car();
+        });
+    }
+
+    jQuery('button.btn-car-clear').on('click', function() {
+        var car = jQuery(this).data('car');
+        clear_car(car);
+    });
+
+    jQuery('button.btn-car-clear-all').on('click', function() {
+        jQuery('tr.car').each(function() {
+            var car  = jQuery(this).data('car');
+            clear_car(car);
+        });
+    });
+
+    jQuery('.nav-tabs li a').on('click', function() {
+        var current = jQuery(this).data('current');
+        jQuery(this).tab('show');
+        jQuery('button.btn-next').data('current', current);
+        if(current == 2) {
+            jQuery('button.btn-next').text('下单');
+        } else {
+            jQuery('button.btn-next').text('下一步');
+        }
+    });
+
+    jQuery('button.btn-next').on('click', function() {
+        var current = parseInt(jQuery(this).data('current'));
+        if(current < 2) {
+            jQuery('.nav-tabs li:eq(' + current + ') a').tab('show');
+            jQuery(this).data('current', current + 1);
+            if(current == 1) {
+                jQuery(this).text('下单');
+            }
+        } else {
+            jQuery('#form_order').submit();
+        }
+
+    });
+
+});
+{% endblock %}

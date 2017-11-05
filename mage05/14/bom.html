@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>js学习</title>
+    </head>
+    <body>
+        <input type="text" id="url" value=""/>
+        <input type="button" id="open" value="打开"/>
+        <script type="text/javascript">
+            document.getElementById("open").onclick = function() {
+                var url = document.getElementById("url").value;
+                window.open(url);
+            }
+            setTimeout(function() {
+                // window.location.reload()
+                window.location.replace("http://www.baidu.com");
+            }, 3 * 1000);
+        </script>
+    </body>
+</html>

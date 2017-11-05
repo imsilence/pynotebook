@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block container %}
+<div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+
+        <form class="form-horizontal" {% if not object %}action="{% url 'account:create_user_address' %}"{% else %}action="{% url 'account:update_user_address' object.pk %}"{% endif %} method="POST" novalidate="novalidate">
+            {% csrf_token %}
+            <table>
+                {{ form.as_table }}
+                <tr>
+                    <td>
+                        {% if not object %}
+                            <button type="submit" class="btn btn-default">新建</button></td>
+                        {% else %}
+                            <button type="submit" class="btn btn-default">更新</button></td>
+                        {% endif %}
+
+                    <td></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+{% endblock %}
