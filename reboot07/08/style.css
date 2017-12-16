@@ -1,0 +1,26 @@
+.mydiv {
+    position: absolute;
+    left: 50px;
+    top : 10px;
+    margin: 15px;
+    padding: 10px;
+    border:5px solid red;
+    width: 300px;
+    height:100px;
+    border-radius:20px;
+}
+.myspan {
+    margin: 15px;
+    padding: 10px;
+    border:5px solid red;
+    width: 300px;
+    height:100px;
+    border-radius:20px;
+    float: right;
+}
+.circle{
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: red;
+}

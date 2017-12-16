@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="./bootstrap-3.3.5-dist/css/bootstrap.min.css">
+        <style type="text/css">
+        #myp {
+            width: 300px;
+            height: 50px;
+            background-color: gray;
+        }
+        </style>
+    </head>
+    <body>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Open modal for @mdo</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">New message</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="control-label">Recipient:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="control-label">Message:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="submitbtn">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Smalxxxxxxxxl modal</button>
+
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+     <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="deletebtn">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">1</div>
+                <div class="col-md-3">2</div>
+                <div class="col-md-4">2</div>
+            </div>
+            <div class="row">
+                <div class="col-md-5">1</div>
+                <div class="col-md-7">2</div>
+            </div>
+            <div class="row">
+                <div class="col-md-10">1</div>
+                <div class="col-md-2">2</div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">1</div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-5">1</div>
+                <div class="col-md-3">2</div>
+                <div class="col-md-4">2</div>
+            </div>
+            <div class="row">
+                <div class="col-md-5">1</div>
+                <div class="col-md-7">2</div>
+            </div>
+            <div class="row">
+                <div class="col-md-10">1</div>
+                <div class="col-md-2">2</div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">1</div>
+            </div>
+        </div>
+
+        <h1>标题</h1>
+        <p id="myp">段落</p>
+        <div class="mydiv lead">我是一个块div</div>
+        <span class="myspan">我是一个块span</span>
+        <a href="">超链接</a>
+        <img src=""/>
+        <!--我是注释-->
+        <div class="container-fluid">
+        <form action="" method="get/post" enctype="multipart/form-data" class="form-horizontal">
+            <div class="form-group has-success">
+                <label class="rs-only">name</label>
+                <input type="text" value="" name="" class="form-control"  disabled="disabled"/>
+
+            </div>
+            <input type="password" value="" name="" class="form-control" />
+            <input type="hidden" value="" name=""/>
+            <input type="radio" value="" name="" class="form-control" checked="checked"/>
+            <input type="checkbox" value="" name="" class="form-control" checked="checked"/>
+            <input type="file" name=""/>
+            <input type="date" name=""/>
+            <input type="submit" value="提交"/>
+            <input type="button" value="普通按钮"/>
+            <input type="reset" value="恢复"/>
+            <select name="">
+                <option value="1">1</option>
+                <option value="2" selected="selected">2</option>
+                <option value="3">3</option>
+            </select>
+            <textarea name="test" class="form-control">fdsfdsdddd</textarea>
+        </form>
+        </div>
+        <ol>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ol>
+
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="2">1</td>
+                    <td>2</td>
+                </tr>
+
+                <tr>
+                    <td rowspan="2">2</td>
+                    <td>2</td>
+                    <td>3</td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>3</td>
+                </tr>
+            </tbody>
+            <tfoot></tfoot>
+        </table>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+
+        <script type="text/javascript" src="./jquery-2.2.0.js"></script>
+        <script type="text/javascript" src="./bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+        $('.bs-example-modal-sm').modal({remote:'http://www.baidu.com'});
+            $('#submitbtn').on('click', function (event) {
+                $('#exampleModal').modal('hide');
+            });
+            $('#deletebtn').on('click', function() {
+                console.log(1);
+            });
+        </script>
+    </body>
+</html>
